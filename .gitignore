@@ -8,3 +8,4 @@ coverage
 @cds-models
 tmp
 .turbo
+.pnpm-store
