@@ -1,0 +1,27 @@
+{
+  "name": "@examples/cap-agents-memory",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@cap-js/agents": "^0.9.3",
+    "@mi8y/cap-agents-memory": "workspace:*",
+    "@sap/cds": "^10",
+    "langchain": "^1.5.10",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "llm": {
+        "kind": "aicore",
+        "model": "gpt-5.4"
+      }
+    }
+  }
+}
