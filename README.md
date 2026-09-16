@@ -32,7 +32,7 @@ cds add agent-memory
 
 ![Demo of CAP Agents Memory](./docs/images/demo-cap-agent-memory.gif)
 
-### 2. CDS vector store
+### 2. Vector store (CDS-based)
 
 - **Package**: [`@mi8y/cap-agents-cds-vectorstore`](https://www.npmjs.com/package/@mi8y/cap-agents-cds-vectorstore)
 
@@ -46,7 +46,25 @@ cds add agent-cds-vectorstore
 
 - **More Info**: [CAP Agents CDS Vector Store README](./packages/cap-agents-cds-vectorstore/README.md)
 
-### 3. LangGraph checkpoint persistence
+![Demo of CAP Agents CDS Vector Store](./docs/images/demo-cap-agents-cds-vectorstore.gif)
+
+### 3. Vector store (AI-Core Document-Grounding based)
+
+- **Package**: [`@mi8y/cap-agents-aicore-vectorstore`](https://www.npmjs.com/package/@mi8y/cap-agents-aicore-vectorstore)
+
+- **Description**: AI-Core Document-Grounding-based LangChain vector store for storing embeddings and documents, enabling RAG, semantic search, and retrieval.
+
+```sh
+cds add agent-aicore-vectorstore
+```
+
+- **Examples**: [`examples/cap-agents-aicore-vectorstore`](./examples/cap-agents-aicore-vectorstore/README.md)
+
+- **More Info**: [CAP Agents AI-Core Vector Store README](./packages/cap-agents-aicore-vectorstore/README.md)
+
+![Demo of CAP Agents AI-Core Vector Store](./docs/images/demo-cap-agents-aicore-vectorstore.gif)
+
+### 4. LangGraph checkpoint persistence
 
 > [!WARNING]
 >

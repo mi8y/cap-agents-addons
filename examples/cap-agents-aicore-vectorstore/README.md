@@ -4,6 +4,8 @@ This example shows how to give an [`@cap-js/agents`](https://www.npmjs.com/packa
 
 It uploads plain-text files through a CAP media entity, splits them into chunks, and sends the chunks to SAP AI Core Document Grounding for storage and server-side embedding. The agent searches those chunks before answering questions and cites their source files.
 
+![Demo of CAP Agents AI-Core Vector Store](../../docs/images/demo-cap-agents-aicore-vectorstore.gif)
+
 ## What you will build
 
 The example adds an ingestion service and a retrieval tool to a standard CAP agent:
