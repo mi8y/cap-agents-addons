@@ -1,0 +1,30 @@
+{
+  "name": "@examples/cap-agents-aicore-vectorstore",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@cap-js/agents": "^0.9.3",
+    "@langchain/core": "^1.2.9",
+    "@langchain/textsplitters": "^1.0.1",
+    "@mi8y/cap-agents-aicore-vectorstore": "workspace:*",
+    "@sap-ai-sdk/langchain": "^2.15.0",
+    "@sap/cds": "^10",
+    "langchain": "^1.5.10",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "llm": {
+        "kind": "aicore",
+        "model": "gpt-5.4"
+      }
+    }
+  }
+}

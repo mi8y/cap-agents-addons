@@ -1,0 +1,43 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+### Create a TextFile Entry
+# @name CreateTextFileEntry
+POST {{server}}/odata/v4/ingest/TextFiles
+Authorization: Basic {{username}}:{{password}}
+Content-Type: application/json
+
+{
+  "fileName":"cat-facts.txt",
+  "mediaType":"text/plain"
+}
+
+### Assign Created
+@TextFileId = {{CreateTextFileEntry.response.body.ID}}
+
+### Upload a file into TextFile entry
+# @name UploadFileIntoTextFile
+PUT {{server}}/odata/v4/ingest/TextFiles/{{TextFileId}}/content
+Authorization: Basic {{username}}:{{password}}
+Content-Type: text/plain
+
+< ../../files/cat-facts.txt
+
+### Get the content of the uploaded TextFile
+# @name GetUploadedFileContent
+GET {{server}}/odata/v4/ingest/TextFiles/{{TextFileId}}/content
+Authorization: Basic {{username}}:{{password}}
+
+### Ingest uploaded file
+# @name IngestUploadedFile
+POST {{server}}/odata/v4/ingest/TextFiles/{{TextFileId}}/IngestService.ingest
+Authorization: Basic {{username}}:{{password}}
+Content-Type: application/json
+
+{}
+
+### Get list of TextFiles
+# @name GetTextFiles
+GET {{server}}/odata/v4/ingest/TextFiles
+Authorization: Basic {{username}}:{{password}}
