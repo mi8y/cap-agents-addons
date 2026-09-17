@@ -1,0 +1,77 @@
+{
+  "name": "@mi8y/cap-agents-aicore-vectorstore",
+  "version": "0.1.0",
+  "description": "LangChain VectorStore for SAP AI Core Document Grounding in CAP applications",
+  "author": "Merbin J Anselm <merbin.j.anselm@mi8y.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mi8y/cap-agents-plugins.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/mi8y/cap-agents-plugins/tree/main/packages/cap-agents-aicore-vectorstore",
+  "bugs": {
+    "url": "https://github.com/mi8y/cap-agents-plugins/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./cds-plugin": "./cds-plugin.js"
+  },
+  "files": [
+    "dist/**/*",
+    "cds-plugin.js",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "keywords": [
+    "sap",
+    "cap",
+    "cds",
+    "ai-core",
+    "document-grounding",
+    "langchain",
+    "vectorstore",
+    "retrieval"
+  ],
+  "dependencies": {
+    "@sap-ai-sdk/document-grounding": "~2.15.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@langchain/core": "^1.2.9",
+    "@sap/cds": ">=10",
+    "@tsconfig/recommended": "^1.0.13",
+    "@typescript/typescript6": "^6.0.2",
+    "eslint": "^10.9.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.65.0"
+  },
+  "peerDependencies": {
+    "@langchain/core": ">=1",
+    "@sap/cds": ">=10"
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && vite build",
+    "test": "vitest run --coverage",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint . --max-warnings 0",
+    "clean": "shx rm -rf node_modules dist coverage .turbo"
+  },
+  "packageManager": "pnpm@11.11.0",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "cds": {
+    "requires": {
+      "cap-agents-aicore-vectorstore": {}
+    }
+  }
+}
