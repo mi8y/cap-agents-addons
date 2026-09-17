@@ -24,8 +24,10 @@
     "format": "prettier --write \"**/*.{json,ts,js,mjs,cjs,md}\"",
     "format:check": "prettier --check \"**/*.{json,ts,js,mjs,cjs,md}\"",
     "changeset": "changeset",
+    "release:check": "node scripts/check-release-readiness.mjs",
+    "release:check:metadata": "node scripts/check-release-readiness.mjs --metadata-only",
     "version-packages": "changeset version && pnpm install --no-frozen-lockfile && pnpm run format",
-    "publish-packages": "changeset publish"
+    "publish-packages": "pnpm run release:check && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^3.0.1",

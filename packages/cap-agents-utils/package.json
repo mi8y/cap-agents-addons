@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/mi8y/cap-agents-plugins.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "license": "MIT",
   "homepage": "https://github.com/mi8y/cap-agents-plugins/tree/main/packages/cap-agents-utils",
   "bugs": {

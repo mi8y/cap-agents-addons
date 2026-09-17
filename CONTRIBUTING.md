@@ -8,14 +8,17 @@ pnpm install
 
 ## Scripts
 
-| Script              | Description                      |
-| ------------------- | -------------------------------- |
-| `pnpm test`         | Run the test suite               |
-| `pnpm lint:check`   | Run all linters without writing  |
-| `pnpm lint`         | Auto-fix lint issues             |
-| `pnpm format:check` | Check formatting without writing |
-| `pnpm format`       | Format source files              |
-| `pnpm changeset`    | Wizard-based changeset creation  |
+| Script               | Description                      |
+| -------------------- | -------------------------------- |
+| `pnpm test`          | Run the test suite               |
+| `pnpm lint:check`    | Run all linters without writing  |
+| `pnpm lint`          | Auto-fix lint issues             |
+| `pnpm format:check`  | Check formatting without writing |
+| `pnpm format`        | Format source files              |
+| `pnpm changeset`     | Wizard-based changeset creation  |
+| `pnpm release:check` | Check npm release readiness      |
+
+See [Releasing packages](docs/releasing.md) before adding a new public package or changing the repository/workflow identity used by npm Trusted Publishing.
 
 ## Style Guides
 
