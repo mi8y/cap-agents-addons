@@ -1,6 +1,6 @@
 {
   "name": "@mi8y/cap-agents-cds-vectorstore",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CDS Plugin for building vector retrieval in LangGraph/LangChain/DeepAgents - Vector Store",
   "author": "Merbin J Anselm <merbin.j.anselm@mi8y.com>",
   "repository": {

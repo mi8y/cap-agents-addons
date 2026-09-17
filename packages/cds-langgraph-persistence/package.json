@@ -1,6 +1,6 @@
 {
   "name": "@mi8y/cds-langgraph-persistence",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "CDS Plugin for LangGraph checkpoint persistence in SAP CAP applications",
   "author": "Merbin J Anselm <merbin.j.anselm@mi8y.com>",
   "repository": {

@@ -1,5 +1,17 @@
 # @mi8y/cds-langgraph-persistence
 
+## 0.7.0
+
+### Minor Changes
+
+- a72a335: - Replace shipped concrete checkpoint entities with reusable CDS aspects.
+  - Add `cds add langgraph-checkpointer` for generating default checkpoint entities.
+
+### Patch Changes
+
+- 8d39e22: Reconstruct sparse checkpoint channel values and versions from ancestor checkpoints when loading checkpoint tuples and history.
+- 52db638: Updated path from `srv/` to `db/` for the generated CDS files
+
 ## 0.6.0
 
 ### Minor Changes
