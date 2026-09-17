@@ -1,6 +1,6 @@
 {
   "name": "@mi8y/cap-agents-aicore-vectorstore",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "LangChain VectorStore for SAP AI Core Document Grounding in CAP applications",
   "author": "Merbin J Anselm <merbin.j.anselm@mi8y.com>",
   "repository": {
