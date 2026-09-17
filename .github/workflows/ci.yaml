@@ -41,6 +41,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Check release metadata
+        run: pnpm release:check:metadata
+
+      - name: Check first-release npm bootstrap
+        if: ${{ github.head_ref == 'changeset-release/main' }}
+        run: pnpm release:check
+
       - name: Check linting
         run: pnpm lint:check
 
