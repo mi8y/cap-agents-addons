@@ -24,7 +24,7 @@ npm Trusted Publishing is configured on an existing npm package. A new package t
      },
      "repository": {
        "type": "git",
-       "url": "git+https://github.com/mi8y/cap-agents-plugins.git"
+       "url": "git+https://github.com/mi8y/cap-agents-addons.git"
      }
    }
    ```
@@ -46,7 +46,7 @@ npm Trusted Publishing is configured on an existing npm package. A new package t
 4. On npmjs.com, open the package's **Settings → Trusted Publisher**, choose **GitHub Actions**, and enter:
 
    - Organization or user: `mi8y`
-   - Repository: `cap-agents-plugins`
+   - Repository: `cap-agents-addons`
    - Workflow filename: `release.yml`
    - Environment name: leave empty
    - Allowed actions: allow direct `npm publish`

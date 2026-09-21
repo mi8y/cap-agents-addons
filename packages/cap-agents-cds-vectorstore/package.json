@@ -5,12 +5,12 @@
   "author": "Merbin J Anselm <merbin.j.anselm@mi8y.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mi8y/cap-agents-plugins.git"
+    "url": "git+https://github.com/mi8y/cap-agents-addons.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/mi8y/cap-agents-plugins/tree/main/packages/cap-agents-cds-vectorstore",
+  "homepage": "https://github.com/mi8y/cap-agents-addons/tree/main/packages/cap-agents-cds-vectorstore",
   "bugs": {
-    "url": "https://github.com/mi8y/cap-agents-plugins/issues"
+    "url": "https://github.com/mi8y/cap-agents-addons/issues"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
