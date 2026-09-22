@@ -1,0 +1,76 @@
+{
+  "name": "@mi8y/cap-agents-cmis-backend",
+  "version": "0.1.0",
+  "description": "CMIS Browser Binding filesystem backend for SAP CAP Agents",
+  "author": "Merbin J Anselm <merbin.j.anselm@mi8y.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mi8y/cap-agents-addons.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/mi8y/cap-agents-addons/tree/main/packages/cap-agents-cmis-backend",
+  "bugs": {
+    "url": "https://github.com/mi8y/cap-agents-addons/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./cds-plugin": "./cds-plugin.js"
+  },
+  "files": [
+    "dist/**/*",
+    "cds-plugin.js",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "keywords": [
+    "sap",
+    "cap",
+    "cds",
+    "cmis",
+    "document-management",
+    "deepagents",
+    "filesystem",
+    "backend"
+  ],
+  "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^4.9.1",
+    "@sap-cloud-sdk/http-client": "^4.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tsconfig/recommended": "^1.0.13",
+    "@typescript/typescript6": "^6.0.2",
+    "deepagents": "^1",
+    "eslint": "^10.9.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.65.0"
+  },
+  "peerDependencies": {
+    "deepagents": ">=1"
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && vite build",
+    "test": "vitest run --coverage",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint . --max-warnings 0",
+    "clean": "shx rm -rf node_modules dist coverage .turbo"
+  },
+  "packageManager": "pnpm@12.4.1",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "cds": {
+    "requires": {
+      "cap-agents-cmis-backend": {}
+    }
+  }
+}
