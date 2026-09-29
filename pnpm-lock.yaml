@@ -385,13 +385,25 @@ importers:
       '@sap-cloud-sdk/http-client':
         specifier: ^4.9.1
         version: 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
+      '@sap/cds':
+        specifier: '>=10'
+        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      picomatch:
+        specifier: ^4.0.7
+        version: 4.0.7
     devDependencies:
+      '@cap-js/cds-types':
+        specifier: ^0.20.0
+        version: 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
+      '@types/picomatch':
+        specifier: ^4.0.3
+        version: 4.0.3
       '@typescript/typescript6':
         specifier: ^6.0.2
         version: 6.0.2
@@ -656,6 +668,17 @@ packages:
 
   '@cap-js/cds-types@0.19.0':
     resolution: {integrity: sha512-bMKdx+aesAYP9QR5Dsjp13OdXMFJtyV47tkbTTGAdUioPF05KA+6BCC+V3ECN3OxDqIKWd3RozxO1+oZe1F8ew==}
+    peerDependencies:
+      '@sap/cds': '>=9.0.0'
+      '@sap/cds-dk': '>=9'
+      '@sap/xssec': '>=3'
+      '@types/express': '>=4'
+    peerDependenciesMeta:
+      '@sap/cds-dk':
+        optional: true
+
+  '@cap-js/cds-types@0.20.0':
+    resolution: {integrity: sha512-3AFQVJ0GM5EKQAeltNMPPq9MW6R56m9Tbk9YwQxstNjbvRGZBoFv42Hs69utjrzpyzhnG7aTniXm6U7Xx43WTw==}
     peerDependencies:
       '@sap/cds': '>=9.0.0'
       '@sap/cds-dk': '>=9'
@@ -1399,6 +1422,9 @@ packages:
 
   '@types/node@26.1.1':
     resolution: {integrity: sha512-nxAkRSVkN1Y0JC1W8ky/fTfkGsMmcrRsbx+3XoZE+rMOX71kLYTV7fLXpqud1GpbpP5TuffXFqfX7fH2GgZREw==}
+
+  '@types/picomatch@4.0.3':
+    resolution: {integrity: sha512-iG0T6+nYJ9FAPmx9SsUlnwcq1ZVRuCXcVEvWnntoPlrOpwtSTKNDC9uVAxTsC3PUvJ+99n4RpAcNgBbHX3JSnQ==}
 
   '@types/qs@6.15.1':
     resolution: {integrity: sha512-GZHUBZR9hckSUhrxmp1nG6NwdpM9fCunJwyThLW1X3AyHgd9IlHb6VANpQQqDr2o/qQp6McZ3y/IA2rVzKzSbw==}
@@ -3459,6 +3485,14 @@ snapshots:
     optionalDependencies:
       '@sap/cds-dk': 10.0.5
 
+  '@cap-js/cds-types@0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)':
+    dependencies:
+      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      '@sap/xssec': 4.13.1(supports-color@7.2.0)
+      '@types/express': 5.0.6
+    optionalDependencies:
+      '@sap/cds-dk': 10.0.5
+
   '@cap-js/db-service@3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
     dependencies:
       '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
@@ -4271,6 +4305,8 @@ snapshots:
   '@types/node@26.1.1':
     dependencies:
       undici-types: 8.3.0
+
+  '@types/picomatch@4.0.3': {}
 
   '@types/qs@6.15.1': {}
 

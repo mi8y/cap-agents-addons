@@ -1,6 +1,7 @@
 import type { BackendProtocolV2 } from "deepagents";
 import { beforeEach, describe, expect, test, vi } from "vitest";
-import { CmisBackend, CmisPropertyName, type CmisObject } from "@/index";
+import { CmisBackend } from "@/index";
+import { CmisPropertyName, type CmisObject } from "@/types";
 
 function object(
   name: string,
@@ -10,6 +11,9 @@ function object(
     size?: number;
     objectId?: string;
     changeToken?: string;
+    checkedOut?: boolean;
+    workingCopyId?: string;
+    privateWorkingCopy?: boolean;
   } = {},
 ): CmisObject {
   return {
@@ -20,6 +24,9 @@ function object(
         : "cmis:document",
       [CmisPropertyName.OBJECT_ID]: options.objectId ?? `id-${name}`,
       [CmisPropertyName.CHANGE_TOKEN]: options.changeToken ?? "change-1",
+      [CmisPropertyName.IS_VERSION_SERIES_CHECKED_OUT]: options.checkedOut,
+      [CmisPropertyName.VERSION_SERIES_CHECKED_OUT_ID]: options.workingCopyId,
+      [CmisPropertyName.IS_PRIVATE_WORKING_COPY]: options.privateWorkingCopy,
       [CmisPropertyName.CONTENT_STREAM_MIME_TYPE]:
         options.mimeType ?? "text/plain",
       [CmisPropertyName.CONTENT_STREAM_LENGTH]: options.size ?? 0,
@@ -55,9 +62,12 @@ function createBackend(options: Record<string, unknown> = {}) {
 describe("CmisBackend", () => {
   beforeEach(() => vi.restoreAllMocks());
 
-  test("implements the Deep Agents v2 backend protocol and rootPath alias", () => {
-    const backend: BackendProtocolV2 = createBackend({ rootPath: "/agents" });
+  test("implements the Deep Agents v2 backend protocol with one virtual root", () => {
+    const backend: BackendProtocolV2 = createBackend({
+      virtualRootPath: "//agents//",
+    });
     expect(backend).toBeInstanceOf(CmisBackend);
+    expect((backend as CmisBackend).virtualRootPath).toBe("/agents");
   });
 
   test("lists all child pages with virtual paths and directory suffixes", async () => {
@@ -135,6 +145,42 @@ describe("CmisBackend", () => {
     });
   });
 
+  test("reads and returns virtual paths under a non-root repository folder", async () => {
+    const backend = createBackend({ virtualRootPath: "/private/agents" });
+    const getObject = vi
+      .spyOn(backend.client, "getObject")
+      .mockResolvedValue(response(object("a.txt", { mimeType: "text/plain" })));
+    const getContent = vi
+      .spyOn(backend.client, "getContentStream")
+      .mockResolvedValue(
+        response(new TextEncoder().encode("hello\nworld").buffer),
+      );
+
+    await expect(backend.read("/docs/a.txt", 1, 1)).resolves.toMatchObject({
+      content: "world",
+      startLine: 2,
+    });
+    await expect(backend.readRaw("//docs//a.txt/")).resolves.toMatchObject({
+      data: { content: "hello\nworld" },
+    });
+    expect(
+      getObject.mock.calls.map(([repositoryPath]) => repositoryPath),
+    ).toEqual(["/private/agents/docs/a.txt", "/private/agents/docs/a.txt"]);
+    expect(
+      getContent.mock.calls.map(([repositoryPath]) => repositoryPath),
+    ).toEqual(["/private/agents/docs/a.txt", "/private/agents/docs/a.txt"]);
+    const smallBackend = createBackend({
+      virtualRootPath: "/private/agents",
+      maxFileSize: 1,
+    });
+    vi.spyOn(smallBackend.client, "getObject").mockResolvedValue(
+      response(object("a.txt", { size: 100 })),
+    );
+    const result = await smallBackend.readRaw("/docs/a.txt");
+    expect(result.error).toContain("'/docs/a.txt'");
+    expect(result.error).not.toContain("/private/agents");
+  });
+
   test("returns binary content without line pagination", async () => {
     const backend = createBackend();
     const bytes = new Uint8Array([1, 2, 3]);
@@ -148,6 +194,32 @@ describe("CmisBackend", () => {
     await expect(backend.read("/image.png", 20, 1)).resolves.toEqual({
       content: bytes,
       mimeType: "image/png",
+    });
+  });
+
+  test("limits file reads and rejects paths before executing CMIS requests", async () => {
+    const backend = createBackend({
+      maxFileSize: 3,
+      virtualRootPath: "/agents",
+    });
+    const getObject = vi
+      .spyOn(backend.client, "getObject")
+      .mockResolvedValue(response(object("big.txt", { size: 4 })));
+    const getContent = vi.spyOn(backend.client, "getContentStream");
+    await expect(backend.readRaw("/big.txt")).resolves.toEqual({
+      error: expect.stringContaining("exceeds the maximum"),
+    });
+    expect(getContent).not.toHaveBeenCalled();
+    await expect(backend.write("/../outside.txt", "bad")).resolves.toEqual({
+      error: "path traversal is not allowed",
+    });
+    expect(getObject).toHaveBeenCalledTimes(1);
+    getObject.mockResolvedValue(response(object("small.txt", { size: 0 })));
+    getContent.mockResolvedValue(
+      response(new TextEncoder().encode("longer").buffer),
+    );
+    await expect(backend.readRaw("/small.txt")).resolves.toEqual({
+      error: expect.stringContaining("exceeds the maximum"),
     });
   });
 
@@ -174,12 +246,86 @@ describe("CmisBackend", () => {
     );
   });
 
+  test("writes only below an existing virtual root and returns virtual paths", async () => {
+    const backend = createBackend({ virtualRootPath: "/private/agents" });
+    const getObject = vi
+      .spyOn(backend.client, "getObject")
+      .mockImplementation(async (repositoryPath) => {
+        if (repositoryPath === "/private/agents")
+          return response(object("agents", { folder: true }));
+        if (
+          repositoryPath === "/private/agents/docs" ||
+          repositoryPath === "/private/agents/docs/a.txt"
+        ) {
+          throw cmisError(404, "objectNotFound");
+        }
+        throw new Error(`unexpected path: ${repositoryPath}`);
+      });
+    const createFolder = vi
+      .spyOn(backend.client, "createFolder")
+      .mockResolvedValue(response(object("docs", { folder: true })));
+    const createDocument = vi
+      .spyOn(backend.client, "createDocument")
+      .mockResolvedValue(response(object("a.txt")));
+
+    await expect(backend.write("//docs//a.txt", "content")).resolves.toEqual({
+      path: "/docs/a.txt",
+      filesUpdate: null,
+    });
+    expect(
+      getObject.mock.calls.map(([repositoryPath]) => repositoryPath),
+    ).toEqual([
+      "/private/agents",
+      "/private/agents/docs",
+      "/private/agents/docs/a.txt",
+    ]);
+    expect(createFolder).toHaveBeenCalledWith("/private/agents/docs");
+    expect(createDocument).toHaveBeenCalledWith(
+      "/private/agents/docs/a.txt",
+      expect.any(Blob),
+    );
+  });
+
+  test("requires a pre-existing virtual root and never creates its parents", async () => {
+    const backend = createBackend({ virtualRootPath: "/private/agents" });
+    const getObject = vi
+      .spyOn(backend.client, "getObject")
+      .mockRejectedValue(cmisError(404, "objectNotFound"));
+    const createFolder = vi.spyOn(backend.client, "createFolder");
+    await expect(backend.write("/docs/a.txt", "content")).resolves.toEqual({
+      error: "virtual root folder does not exist",
+    });
+    expect(getObject).toHaveBeenCalledTimes(1);
+    expect(getObject).toHaveBeenCalledWith("/private/agents");
+    expect(createFolder).not.toHaveBeenCalled();
+    await expect(backend.write("/", "content")).resolves.toEqual({
+      error: "cannot write a document at the root path",
+    });
+    await expect(backend.edit("/", "a", "b")).resolves.toEqual({
+      error: "cannot edit a document at the root path",
+    });
+    expect(getObject).toHaveBeenCalledTimes(1);
+  });
+
+  test("does not write through a virtual root that is a document", async () => {
+    const backend = createBackend({ virtualRootPath: "/private/agents" });
+    vi.spyOn(backend.client, "getObject").mockResolvedValue(
+      response(object("agents")),
+    );
+    const createFolder = vi.spyOn(backend.client, "createFolder");
+    await expect(backend.write("/docs/a.txt", "content")).resolves.toEqual({
+      error: "virtual root is not a folder",
+    });
+    expect(createFolder).not.toHaveBeenCalled();
+  });
+
   test("falls back to checkout and checkin for versioned documents", async () => {
     const backend = createBackend();
     const folder = object("docs", { folder: true });
     const document = object("readme.md", { changeToken: "old-token" });
     vi.spyOn(backend.client, "getObject")
       .mockResolvedValueOnce(response(folder))
+      .mockResolvedValueOnce(response(document))
       .mockResolvedValueOnce(response(document));
     vi.spyOn(backend.client, "setContentStream").mockRejectedValue(
       cmisError(409, "updateConflict"),
@@ -207,6 +353,132 @@ describe("CmisBackend", () => {
     );
   });
 
+  test("checks in an existing working copy without checking out or cancelling it", async () => {
+    const backend = createBackend();
+    const document = object("readme.md");
+    const getObject = vi
+      .spyOn(backend.client, "getObject")
+      .mockResolvedValueOnce(response(object("docs", { folder: true })))
+      .mockResolvedValueOnce(response(document))
+      .mockResolvedValueOnce(
+        response(
+          object("readme.md", {
+            checkedOut: true,
+            workingCopyId: "existing-pwc",
+          }),
+        ),
+      );
+    vi.spyOn(backend.client, "setContentStream").mockRejectedValue(
+      cmisError(409, "updateConflict"),
+    );
+    const checkOut = vi.spyOn(backend.client, "checkOut");
+    const checkIn = vi
+      .spyOn(backend.client, "checkIn")
+      .mockResolvedValue(response(document));
+    const cancelCheckOut = vi.spyOn(backend.client, "cancelCheckOut");
+
+    await expect(backend.write("/docs/readme.md", "updated")).resolves.toEqual({
+      path: "/docs/readme.md",
+      filesUpdate: null,
+    });
+    expect(getObject).toHaveBeenCalledTimes(3);
+    expect(checkOut).not.toHaveBeenCalled();
+    expect(checkIn).toHaveBeenCalledWith(
+      "existing-pwc",
+      "readme.md",
+      expect.any(Blob),
+    );
+    expect(await checkIn.mock.calls[0][2].text()).toBe("updated");
+    expect(cancelCheckOut).not.toHaveBeenCalled();
+  });
+
+  test("edits a private working copy and retains it on check-in failure", async () => {
+    const backend = createBackend();
+    const document = object("readme.md");
+    vi.spyOn(backend.client, "getObject")
+      .mockResolvedValueOnce(response(document))
+      .mockResolvedValueOnce(response(document))
+      .mockResolvedValueOnce(
+        response(
+          object("readme.md", {
+            objectId: "existing-pwc",
+            privateWorkingCopy: true,
+          }),
+        ),
+      );
+    vi.spyOn(backend.client, "getContentStream").mockResolvedValue(
+      response(new TextEncoder().encode("old").buffer),
+    );
+    vi.spyOn(backend.client, "setContentStream").mockRejectedValue(
+      cmisError(409, "updateConflict"),
+    );
+    const checkOut = vi.spyOn(backend.client, "checkOut");
+    const checkIn = vi
+      .spyOn(backend.client, "checkIn")
+      .mockRejectedValue(cmisError(403, "permissionDenied"));
+    const cancelCheckOut = vi.spyOn(backend.client, "cancelCheckOut");
+
+    await expect(backend.edit("/readme.md", "old", "updated")).resolves.toEqual(
+      {
+        error: "SDM access denied (HTTP 403)",
+      },
+    );
+    expect(checkOut).not.toHaveBeenCalled();
+    expect(checkIn).toHaveBeenCalledWith(
+      "existing-pwc",
+      "readme.md",
+      expect.any(Blob),
+    );
+    expect(cancelCheckOut).not.toHaveBeenCalled();
+  });
+
+  test("fails safely when a checked-out document has no visible working copy", async () => {
+    const backend = createBackend();
+    const document = object("readme.md");
+    vi.spyOn(backend.client, "getObject")
+      .mockResolvedValueOnce(response(object("docs", { folder: true })))
+      .mockResolvedValueOnce(response(document))
+      .mockResolvedValueOnce(
+        response(object("readme.md", { checkedOut: true })),
+      );
+    vi.spyOn(backend.client, "setContentStream").mockRejectedValue(
+      cmisError(409, "updateConflict"),
+    );
+    const checkOut = vi.spyOn(backend.client, "checkOut");
+    const checkIn = vi.spyOn(backend.client, "checkIn");
+    await expect(backend.write("/docs/readme.md", "updated")).resolves.toEqual({
+      error: "CMIS checked-out document has no visible working copy ID",
+    });
+    expect(checkOut).not.toHaveBeenCalled();
+    expect(checkIn).not.toHaveBeenCalled();
+  });
+
+  test("cancels only a checkout created by this update if check-in fails", async () => {
+    const backend = createBackend();
+    const document = object("readme.md");
+    vi.spyOn(backend.client, "getObject")
+      .mockResolvedValueOnce(response(object("docs", { folder: true })))
+      .mockResolvedValueOnce(response(document))
+      .mockResolvedValueOnce(response(document));
+    vi.spyOn(backend.client, "setContentStream").mockRejectedValue(
+      cmisError(409, "updateConflict"),
+    );
+    vi.spyOn(backend.client, "checkOut").mockResolvedValue(
+      response(object("readme.md", { objectId: "new-pwc" })),
+    );
+    vi.spyOn(backend.client, "checkIn").mockRejectedValue(
+      cmisError(403, "permissionDenied"),
+    );
+    const cancelCheckOut = vi
+      .spyOn(backend.client, "cancelCheckOut")
+      .mockResolvedValue(response(undefined));
+
+    await expect(backend.write("/docs/readme.md", "updated")).resolves.toEqual({
+      error: "SDM access denied (HTTP 403)",
+    });
+    expect(cancelCheckOut).toHaveBeenCalledWith("new-pwc");
+  });
+
   test("edits text and validates occurrence rules", async () => {
     const backend = createBackend();
     vi.spyOn(backend.client, "getObject").mockResolvedValue(
@@ -231,6 +503,37 @@ describe("CmisBackend", () => {
       occurrences: 2,
     });
     expect(setContent).toHaveBeenCalledTimes(1);
+  });
+
+  test("edits through the virtual root without applying the prefix twice", async () => {
+    const backend = createBackend({ virtualRootPath: "/private/agents" });
+    const getObject = vi
+      .spyOn(backend.client, "getObject")
+      .mockResolvedValue(response(object("a.txt")));
+    const getContent = vi
+      .spyOn(backend.client, "getContentStream")
+      .mockResolvedValue(response(new TextEncoder().encode("hello").buffer));
+    const setContent = vi
+      .spyOn(backend.client, "setContentStream")
+      .mockResolvedValue(response(object("a.txt")));
+
+    await expect(
+      backend.edit("/docs/a.txt", "hello", "updated"),
+    ).resolves.toEqual({
+      path: "/docs/a.txt",
+      filesUpdate: null,
+      occurrences: 1,
+    });
+    expect(
+      getObject.mock.calls.map(([repositoryPath]) => repositoryPath),
+    ).toEqual(["/private/agents/docs/a.txt", "/private/agents/docs/a.txt"]);
+    expect(getContent).toHaveBeenCalledTimes(1);
+    expect(getContent).toHaveBeenCalledWith("/private/agents/docs/a.txt");
+    expect(setContent).toHaveBeenCalledWith(
+      "/private/agents/docs/a.txt",
+      expect.any(Blob),
+      "change-1",
+    );
   });
 
   test("uses descendants for glob and grep", async () => {
@@ -275,6 +578,182 @@ describe("CmisBackend", () => {
     });
   });
 
+  test("matches dotfiles against paths relative to the search base", async () => {
+    const backend = createBackend();
+    vi.spyOn(backend.client, "getObject").mockImplementation(
+      async (repositoryPath) =>
+        response(
+          object(repositoryPath === "/" ? "root" : ".hidden.md", {
+            folder: repositoryPath === "/",
+          }),
+        ),
+    );
+    vi.spyOn(backend.client, "getDescendants").mockResolvedValue(
+      response([
+        { object: { object: object(".hidden.md"), pathSegment: ".hidden.md" } },
+        {
+          object: {
+            object: object("docs", { folder: true }),
+            pathSegment: "docs",
+          },
+          children: [
+            {
+              object: { object: object(".notes.md"), pathSegment: ".notes.md" },
+            },
+          ],
+        },
+      ]),
+    );
+    vi.spyOn(backend.client, "getContentStream").mockResolvedValue(
+      response(new TextEncoder().encode("hello").buffer),
+    );
+
+    await expect(backend.glob("*.md")).resolves.toEqual({
+      files: [expect.objectContaining({ path: "/.hidden.md" })],
+      truncated: undefined,
+    });
+    await expect(backend.glob("**/*.md")).resolves.toEqual({
+      files: [
+        expect.objectContaining({ path: "/.hidden.md" }),
+        expect.objectContaining({ path: "/docs/.notes.md" }),
+      ],
+      truncated: undefined,
+    });
+    await expect(backend.grep("hello", "/", "*.md")).resolves.toEqual({
+      matches: [{ path: "/.hidden.md", line: 1, text: "hello" }],
+      truncated: undefined,
+    });
+  });
+
+  test("keeps root-relative paths in paginated traversal fallback", async () => {
+    const backend = createBackend({ virtualRootPath: "/private/agents" });
+    const getObject = vi
+      .spyOn(backend.client, "getObject")
+      .mockImplementation(async (repositoryPath) => {
+        if (repositoryPath === "/private/agents")
+          return response(object("agents", { folder: true }));
+        if (repositoryPath === "/private/agents/docs/a.txt")
+          return response(object("a.txt"));
+        throw cmisError(404, "objectNotFound");
+      });
+    vi.spyOn(backend.client, "getDescendants").mockRejectedValue(
+      cmisError(405, "notSupported"),
+    );
+    const getChildren = vi
+      .spyOn(backend.client, "getChildren")
+      .mockImplementation(async (repositoryPath) =>
+        response({
+          objects:
+            repositoryPath === "/private/agents"
+              ? [
+                  {
+                    object: object("docs", { folder: true }),
+                    pathSegment: "docs",
+                  },
+                ]
+              : [{ object: object("a.txt"), pathSegment: "a.txt" }],
+          hasMoreItems: false,
+        }),
+      );
+    vi.spyOn(backend.client, "getContentStream").mockResolvedValue(
+      response(new TextEncoder().encode("hello").buffer),
+    );
+
+    await expect(backend.glob("**/*.txt")).resolves.toEqual({
+      files: [expect.objectContaining({ path: "/docs/a.txt" })],
+      truncated: undefined,
+    });
+    await expect(backend.grep("hello")).resolves.toEqual({
+      matches: [{ path: "/docs/a.txt", line: 1, text: "hello" }],
+      truncated: undefined,
+    });
+    expect(
+      getChildren.mock.calls.map(([repositoryPath]) => repositoryPath),
+    ).toEqual([
+      "/private/agents",
+      "/private/agents/docs",
+      "/private/agents",
+      "/private/agents/docs",
+    ]);
+    expect(
+      getObject.mock.calls.every(([repositoryPath]) =>
+        repositoryPath.startsWith("/private/agents"),
+      ),
+    ).toBe(true);
+  });
+
+  test("matches nested virtual bases and a file base", async () => {
+    const backend = createBackend({ virtualRootPath: "/private/agents" });
+    const getObject = vi
+      .spyOn(backend.client, "getObject")
+      .mockImplementation(async (repositoryPath) =>
+        repositoryPath === "/private/agents/docs"
+          ? response(object("docs", { folder: true }))
+          : response(object("a.txt")),
+      );
+    const getDescendants = vi
+      .spyOn(backend.client, "getDescendants")
+      .mockResolvedValue(
+        response([
+          {
+            object: {
+              object: object("sub", { folder: true }),
+              pathSegment: "sub",
+            },
+            children: [
+              { object: { object: object("a.txt"), pathSegment: "a.txt" } },
+            ],
+          },
+        ]),
+      );
+    vi.spyOn(backend.client, "getContentStream").mockResolvedValue(
+      response(new TextEncoder().encode("hello").buffer),
+    );
+
+    await expect(backend.glob("**/*.{txt,md}", "/docs")).resolves.toEqual({
+      files: [expect.objectContaining({ path: "/docs/sub/a.txt" })],
+      truncated: undefined,
+    });
+    await expect(
+      backend.grep("hello", "/docs", "**/*.{txt,md}"),
+    ).resolves.toEqual({
+      matches: [{ path: "/docs/sub/a.txt", line: 1, text: "hello" }],
+      truncated: undefined,
+    });
+    await expect(backend.glob("*.txt", "/docs/sub/a.txt")).resolves.toEqual({
+      files: [expect.objectContaining({ path: "/docs/sub/a.txt" })],
+      truncated: undefined,
+    });
+    expect(getDescendants).toHaveBeenCalledTimes(2);
+    expect(
+      getObject.mock.calls.every(([repositoryPath]) =>
+        repositoryPath.startsWith("/private/agents/docs"),
+      ),
+    ).toBe(true);
+  });
+
+  test("rejects unsafe CMIS child segments in listings and traversal", async () => {
+    const backend = createBackend({ virtualRootPath: "/private/agents" });
+    vi.spyOn(backend.client, "getChildren").mockResolvedValue(
+      response({
+        objects: [{ object: object("outside"), pathSegment: "../outside" }],
+        hasMoreItems: false,
+      }),
+    );
+    await expect(backend.ls("/")).resolves.toEqual({
+      error: "CMIS returned an unsafe path segment",
+    });
+    vi.spyOn(backend.client, "getObject").mockResolvedValue(
+      response(object("agents", { folder: true })),
+    );
+    vi.spyOn(backend.client, "getDescendants").mockResolvedValue(
+      response([{ object: { object: object("outside"), pathSegment: "a/b" } }]),
+    );
+    await expect(backend.glob("**")).resolves.toEqual({
+      error: "CMIS returned an unsafe path segment",
+    });
+  });
+
   test("marks traversal results as truncated at the configured limit", async () => {
     const backend = createBackend({ maxTraversalItems: 1 });
     vi.spyOn(backend.client, "getObject").mockResolvedValue(
@@ -298,11 +777,28 @@ describe("CmisBackend", () => {
     await expect(backend.read("relative.md")).resolves.toEqual({
       error: "file path must be absolute - 'relative.md'",
     });
+    await expect(backend.edit("/../secret.txt", "a", "b")).resolves.toEqual({
+      error: "path traversal is not allowed",
+    });
+    await expect(backend.glob("**", "/../secret")).resolves.toEqual({
+      error: "path traversal is not allowed",
+    });
+    await expect(
+      backend.grep("hello", "/../secret", "**/*.txt"),
+    ).resolves.toEqual({
+      error: "path traversal is not allowed",
+    });
     vi.spyOn(backend.client, "getChildren").mockRejectedValue(
       cmisError(403, "permissionDenied", "Access denied"),
     );
     await expect(backend.ls("/")).resolves.toEqual({
-      error: "Access denied",
+      error: "SDM access denied (HTTP 403)",
+    });
+    vi.spyOn(backend.client, "getChildren").mockRejectedValue(
+      cmisError(401, "unauthorized", "secret-bearing error"),
+    );
+    await expect(backend.ls("/")).resolves.toEqual({
+      error: "SDM authentication required (HTTP 401)",
     });
   });
 });

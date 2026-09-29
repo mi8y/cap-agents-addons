@@ -8,6 +8,9 @@ export enum CmisPropertyName {
   CREATION_DATE = "cmis:creationDate",
   LAST_MODIFICATION_DATE = "cmis:lastModificationDate",
   CHANGE_TOKEN = "cmis:changeToken",
+  IS_PRIVATE_WORKING_COPY = "cmis:isPrivateWorkingCopy",
+  IS_VERSION_SERIES_CHECKED_OUT = "cmis:isVersionSeriesCheckedOut",
+  VERSION_SERIES_CHECKED_OUT_ID = "cmis:versionSeriesCheckedOutId",
   PATH = "cmis:path",
 }
 

@@ -42,11 +42,14 @@
   ],
   "dependencies": {
     "@sap-cloud-sdk/connectivity": "^4.9.1",
-    "@sap-cloud-sdk/http-client": "^4.9.1"
+    "@sap-cloud-sdk/http-client": "^4.9.1",
+    "picomatch": "^4.0.7"
   },
   "devDependencies": {
+    "@cap-js/cds-types": "^0.20.0",
     "@eslint/js": "^10.0.1",
     "@tsconfig/recommended": "^1.0.13",
+    "@types/picomatch": "^4.0.3",
     "@typescript/typescript6": "^6.0.2",
     "deepagents": "^1",
     "eslint": "^10.9.1",
@@ -54,6 +57,7 @@
     "typescript-eslint": "^8.65.0"
   },
   "peerDependencies": {
+    "@sap/cds": ">=10",
     "deepagents": ">=1"
   },
   "scripts": {

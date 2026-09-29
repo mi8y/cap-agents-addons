@@ -1,124 +1,47 @@
 # @mi8y/cap-agents-cmis-backend
 
-[![npm version](https://img.shields.io/npm/v/@mi8y/cap-agents-cmis-backend)](https://www.npmjs.com/package/@mi8y/cap-agents-cmis-backend)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+A [Deep Agents](https://www.npmjs.com/package/deepagents) `BackendProtocolV2` filesystem backed by an SAP Document Management Service (SDM) CMIS Browser Binding repository. HTTP requests use the SAP Cloud SDK. This package does not require `@cap-js/sdm` or manage repository provisioning.
 
-A CMIS 1.1 Browser Binding filesystem backend for Deep Agents running in SAP CAP applications.
+## Setup
 
-The backend implements `BackendProtocolV2` operations for listing, reading, writing, editing, globbing, and literal text search. HTTP requests use the SAP Cloud SDK so applications can resolve authentication and connectivity through service bindings or destinations.
-
-## Installation
-
-```sh
-npm install @mi8y/cap-agents-cmis-backend
-```
-
-Requires:
-
-- `deepagents >= 1`
-- A CMIS 1.1 Browser Binding repository
-- A Node.js runtime with `Blob` and `FormData`
-
-## Create a backend
+Install this package alongside `@sap/cds` (v10+) and `deepagents` (v1+). Configure a Cloud SDK destination pointing to the **SDM API base URL**, not the UAA URL or `/browser`, and give it access to an existing CMIS repository.
 
 ```ts
 import { CmisBackend } from "@mi8y/cap-agents-cmis-backend";
 
 const backend = new CmisBackend({
-  destination: { destinationName: "CMIS" },
-  repositoryId: "knowledge",
-  virtualRootPath: "/agent-content",
+  destination: { destinationName: "SDM_API" }, // configured by your application
+  repositoryId: "agent-files", // external CMIS repository ID
+  virtualRootPath: "/agent-content", // existing folder in the repository
 });
+
+await backend.write("/notes/todo.md", "First task\n");
+const result = await backend.read("/notes/todo.md");
 ```
 
-`virtualRootPath` exposes one CMIS folder as `/` to the agent. The deprecated `rootPath` option remains available as an alias.
-
-A fetched JWT can be passed through SAP Cloud SDK destination lookup options when user or subscriber context is required:
-
-```ts
-const backend = new CmisBackend({
-  destination: { destinationName: "CMIS", jwt },
-  repositoryId: "knowledge",
-});
-```
-
-No network request is made by the constructor or CAP bootstrap hook. Credentials are resolved by the SAP Cloud SDK and are not stored by this package.
-
-## CAP configuration
-
-```json
-{
-  "cds": {
-    "requires": {
-      "cap-agents-cmis-backend": {
-        "destinationName": "CMIS",
-        "repositoryId": "knowledge",
-        "virtualRootPath": "/agent-content"
-      }
-    }
-  }
-}
-```
-
-```ts
-import cds from "@sap/cds";
-import { CmisBackend } from "@mi8y/cap-agents-cmis-backend";
-
-const config = cds.env.requires["cap-agents-cmis-backend"];
-const backend = new CmisBackend({
-  destination: { destinationName: config.destinationName },
-  repositoryId: config.repositoryId,
-  virtualRootPath: config.virtualRootPath,
-});
-```
+`repositoryId` may also be an async function returning an ID. If omitted, it is read from `cds.env.requires.sdm?.settings?.repositoryId`. The backend does not validate or provision a repository. The host application owns destination authentication and tenant isolation: configure a trusted destination for the relevant request or tenant rather than sharing a user-specific destination across tenants. Do not put credentials in package files or logs. The default Browser Binding path is `/browser` and can be changed with `browserBindingPath`.
 
 ## Filesystem behavior
 
-- `ls` uses paginated CMIS `getChildren` requests.
-- `read` and `readRaw` retrieve CMIS metadata and the content stream. Text is decoded and can be paginated by line; binary content is returned as `Uint8Array`.
-- `write` creates missing parent folders, creates new documents, or replaces existing content.
-- `edit` performs Deep Agents-compatible text replacement and rejects binary content.
-- `glob` and `grep` use CMIS `getDescendants`. If a repository does not support it, the backend falls back to paginated recursive `getChildren` requests.
-- `grep` performs literal, line-based matching and skips binary MIME types.
+The backend accepts **absolute virtual paths** (`virtualRootPath` defaults to `/`). With `virtualRootPath: "/agent-content"`, virtual `/notes/todo.md` corresponds to repository `/agent-content/notes/todo.md`. Results use virtual paths; `/` refers to the configured root. The root folder must already exist; writes can create missing folders _below_ it. Traversal paths are rejected, and `write` and `edit` cannot target `/`.
 
-Writes to checked-in versionable documents first try `setContent`. Repositories such as OpenCMIS that require a private working copy are handled with `checkOut` followed by `checkIn`; a failed check-in triggers a best-effort `cancelCheckOut`.
-
-All paths visible to the agent are absolute virtual paths. Traversal segments, backslashes, and null bytes are rejected before a CMIS request is made. Ordinary filesystem and CMIS failures are returned as structured Deep Agents errors.
-
-Traversal is bounded by `maxTraversalItems`, which defaults to 10,000. Child request pages default to 100 entries:
-
-```ts
-const backend = new CmisBackend({
-  destination: { destinationName: "CMIS" },
-  repositoryId: "knowledge",
-  maxTraversalItems: 5_000,
-  pageSize: 200,
-});
-```
+`ls`, `read`, `readRaw`, `write`, `edit`, `glob`, and literal `grep` return structured filesystem results, including errors. Reads are limited to 5 MiB by default (`maxFileSize`). Glob/grep scan at most 10,000 entries (`maxTraversalItems`) using pages of 100 (`pageSize`) when CMIS descendants are unavailable. Glob filters match paths relative to the search base using picomatch, including dotfiles. An update conflict may require checking in a CMIS working copy.
 
 ## Low-level client
 
-The Browser Binding client is exported for direct CMIS operations:
+`SapCloudSdkCmisClient` is also exported for direct Browser Binding operations, including listing, reading, creating, updating, checking out/in, querying, and explicit deletion. Unlike the backend, its path arguments are **repository paths**; it does not apply `virtualRootPath`. Only use delete operations on paths you own. The client uses a host-supplied Cloud SDK destination and does not implement repository validation or connection/tenant management.
 
-```ts
-import { SapCloudSdkCmisClient } from "@mi8y/cap-agents-cmis-backend";
+## Development
 
-const client = new SapCloudSdkCmisClient({
-  destination: { destinationName: "CMIS" },
-  repositoryId: "knowledge",
-  browserBindingPath: "/browser",
-});
+From the monorepo root:
 
-const children = await client.getChildren("/documents", {
-  maxItems: 100,
-  skipCount: 0,
-});
-const descendants = await client.getDescendants("/documents");
-const results = await client.query("SELECT * FROM cmis:document");
+```sh
+pnpm --filter @mi8y/cap-agents-cmis-backend build
+pnpm --filter @mi8y/cap-agents-cmis-backend test
 ```
 
-The client also exposes object metadata, folder tree, content stream, create, update, checkout, check-in, and cancel-checkout operations.
+The local CMIS integration test is opt-in: set `CMIS_LIVE_DESTINATION` to a preconfigured, authenticated Cloud SDK destination and `CMIS_LIVE_REPOSITORY_ID` to a test repository. It creates and cleans up a unique test folder. The default test run skips it.
 
 ## License
 
-[MIT License](./LICENSE)
+[MIT](./LICENSE)

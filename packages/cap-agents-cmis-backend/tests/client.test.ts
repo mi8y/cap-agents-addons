@@ -23,7 +23,18 @@ describe("SapCloudSdkCmisClient", () => {
           destination: { url: "https://cmis.example" },
           repositoryId: "",
         }),
-    ).toThrow("'repositoryId' is required");
+    ).toThrow("`repositoryId` must be specified");
+  });
+
+  test("rejects traversal before any low-level upload or lookup", async () => {
+    const { client, requestExecutor } = createClient();
+    await expect(
+      client.createDocument("/docs/../escape.txt", new Blob(["bad"])),
+    ).rejects.toThrow("path traversal");
+    await expect(client.getObject("/docs/../escape.txt")).rejects.toThrow(
+      "path traversal",
+    );
+    expect(requestExecutor).not.toHaveBeenCalled();
   });
 
   test("addresses objects below the Browser Binding root and encodes segments", async () => {
@@ -143,6 +154,25 @@ describe("SapCloudSdkCmisClient", () => {
     expect(form.get("statement")).toBe("SELECT * FROM cmis:document");
     expect(form.get("maxItems")).toBe("10");
     expect(form.get("skipCount")).toBe("2");
+  });
+
+  test("deletes a document or owned folder by path", async () => {
+    const { client, requestExecutor } = createClient();
+    await client.deleteObject("/scratch/doc.txt");
+    await client.deleteTree("/scratch");
+    expect(vi.mocked(requestExecutor).mock.calls[0]?.[1].url).toBe(
+      "/browser/knowledge%20base/root/scratch/doc.txt",
+    );
+    expect(
+      (vi.mocked(requestExecutor).mock.calls[0]?.[1].data as FormData).get(
+        "cmisaction",
+      ),
+    ).toBe("delete");
+    expect(
+      (vi.mocked(requestExecutor).mock.calls[1]?.[1].data as FormData).get(
+        "cmisaction",
+      ),
+    ).toBe("deleteTree");
   });
 
   test("supports a custom Browser Binding path", async () => {
