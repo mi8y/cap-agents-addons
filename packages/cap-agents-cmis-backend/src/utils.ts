@@ -2,6 +2,11 @@ import cds from "@sap/cds";
 import type { FileData, FileInfo } from "deepagents";
 import path from "node:path";
 import { type CmisObject, CmisPropertyName } from "./types";
+import {
+  HttpDestination,
+  jwtBearerToken,
+  Service,
+} from "@sap-cloud-sdk/connectivity";
 
 const LOG = cds.log("cap-agents-cmis-backend");
 
@@ -222,4 +227,32 @@ export function isTextMimeType(mimeType: string): boolean {
     normalized.endsWith("+json") ||
     normalized.endsWith("+xml")
   );
+}
+
+/**
+ * Transform an SDM service binding into an HTTP destination using a JWT bearer assertion.
+ * @param service The service binding object for the SDM service.
+ * @param userJwt The bearer JWT from the current CAP request.
+ * @returns A promise that resolves to an HTTP destination configured with a JWT bearer assertion.
+ */
+export async function transformServiceBindingToJwtBearerAssertionDestination(
+  service: Service,
+  userJwt: string,
+): Promise<HttpDestination> {
+  const token = await jwtBearerToken(userJwt, {
+    ...service,
+    credentials: service.credentials.uaa,
+  });
+  return {
+    url: service.credentials.uri,
+    authentication: "OAuth2JWTBearer",
+    authTokens: [
+      {
+        type: "bearer",
+        value: token,
+        http_header: { key: "Authorization", value: `Bearer ${token}` },
+        error: null,
+      },
+    ],
+  };
 }

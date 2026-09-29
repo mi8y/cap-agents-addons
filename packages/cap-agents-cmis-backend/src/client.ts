@@ -1,21 +1,29 @@
-import type { HttpDestinationOrFetchOptions } from "@sap-cloud-sdk/connectivity";
+import {
+  assertHttpDestination,
+  getDestinationFromServiceBinding,
+  getServiceBinding,
+  retrieveJwt,
+  type HttpDestinationOrFetchOptions,
+} from "@sap-cloud-sdk/connectivity";
 import {
   executeHttpRequest,
   type HttpRequestConfig,
   type HttpRequestOptions,
   type HttpResponse,
 } from "@sap-cloud-sdk/http-client";
+import cds from "@sap/cds";
 import path from "node:path";
-import { normalizeAbsolutePath } from "./utils";
 import {
+  CmisPagingOptions,
+  CmisPropertyName,
   type CmisObject,
   type CmisObjectInFolderContainer,
   type CmisObjectInFolderList,
-  CmisPagingOptions,
-  CmisPropertyName,
   type CmisQueryResultList,
 } from "./types";
-import cds from "@sap/cds";
+import * as utils from "./utils";
+
+const LOG = cds.log("cap-agents-cmis-backend");
 
 export type CmisHttpRequestExecutor = (
   destination: HttpDestinationOrFetchOptions,
@@ -25,7 +33,8 @@ export type CmisHttpRequestExecutor = (
 
 export type CmisHttpClientConfig = {
   /**
-   * Destination/connection info for the CMIS repository
+   * Destination for the CMIS repository. When omitted, use the CF SDM service
+   * binding and exchange the current CAP request's bearer JWT for an SDM token.
    */
   destination?: HttpDestinationOrFetchOptions;
   /**
@@ -76,12 +85,42 @@ export class SapCloudSdkCmisClient {
     );
   }
 
-  /** Retrieve the host-supplied Cloud SDK destination. */
+  /** Use an explicit destination or exchange the CAP request JWT via the SDM binding. */
   async #getConnectionInfo(): Promise<HttpDestinationOrFetchOptions> {
-    if (!this.#config.destination) {
-      throw new Error("Destination is not configured");
+    if (this.#config.destination) return this.#config.destination;
+
+    // retrieve the bearer JWT from the current CAP request
+    const req = cds.context?.http?.req;
+    const userJwt = req && retrieveJwt(req);
+    if (!userJwt) {
+      LOG.warn("SDM service binding requires a CAP request bearer JWT");
+      throw new Error(
+        "A bearer JWT in the current CAP request is required for the SDM service binding",
+      );
     }
-    return this.#config.destination;
+
+    // exchange the CAP request JWT for an HTTP destination using the SDM service binding
+    try {
+      const binding = getServiceBinding("sdm");
+      if (!binding) throw new Error("SDM service binding is not configured");
+
+      const destination = await getDestinationFromServiceBinding({
+        service: binding,
+        jwt: userJwt,
+        useCache: true,
+        serviceBindingTransformFn: async (service) => {
+          return utils.transformServiceBindingToJwtBearerAssertionDestination(
+            service,
+            userJwt,
+          );
+        },
+      });
+      assertHttpDestination(destination);
+      LOG.debug("Resolved SDM service binding with JWT bearer flow");
+      return destination;
+    } catch {
+      throw new Error("SDM JWT bearer destination resolution failed");
+    }
   }
 
   /** Return the Browser Binding base path on the destination. */
@@ -109,7 +148,7 @@ export class SapCloudSdkCmisClient {
 
   /** Encode an absolute repository path into a CMIS object URL. */
   async #getObjectUrl(repositoryPath: string): Promise<string> {
-    const normalized = normalizeAbsolutePath(repositoryPath);
+    const normalized = utils.normalizeAbsolutePath(repositoryPath);
     const encoded = normalized
       .split(path.posix.sep)
       .filter(Boolean)
@@ -220,7 +259,8 @@ export class SapCloudSdkCmisClient {
     repositoryPath: string,
     content: Blob,
   ): Promise<CmisResponse<CmisObject>> {
-    const normalizedRepositoryPath = normalizeAbsolutePath(repositoryPath);
+    const normalizedRepositoryPath =
+      utils.normalizeAbsolutePath(repositoryPath);
 
     const fileName = path.posix.basename(normalizedRepositoryPath);
     if (normalizedRepositoryPath === "/")
@@ -248,7 +288,8 @@ export class SapCloudSdkCmisClient {
   async createFolder(
     repositoryPath: string,
   ): Promise<CmisResponse<CmisObject>> {
-    const normalizedRepositoryPath = normalizeAbsolutePath(repositoryPath);
+    const normalizedRepositoryPath =
+      utils.normalizeAbsolutePath(repositoryPath);
 
     const folderName = path.posix.basename(normalizedRepositoryPath);
     if (normalizedRepositoryPath === "/")
@@ -275,7 +316,8 @@ export class SapCloudSdkCmisClient {
   async getContentStream(
     repositoryPath: string,
   ): Promise<CmisResponse<ArrayBuffer>> {
-    const normalizedRepositoryPath = normalizeAbsolutePath(repositoryPath);
+    const normalizedRepositoryPath =
+      utils.normalizeAbsolutePath(repositoryPath);
 
     return this.#execute<ArrayBuffer>({
       method: "GET",
@@ -291,7 +333,8 @@ export class SapCloudSdkCmisClient {
     content: Blob,
     changeToken?: string,
   ): Promise<CmisResponse<CmisObject>> {
-    const normalizedRepositoryPath = normalizeAbsolutePath(repositoryPath);
+    const normalizedRepositoryPath =
+      utils.normalizeAbsolutePath(repositoryPath);
 
     const formData = new FormData();
     formData.append("cmisaction", "setContent");
@@ -313,7 +356,8 @@ export class SapCloudSdkCmisClient {
 
   /** Check out a document to obtain a private working copy. */
   async checkOut(repositoryPath: string): Promise<CmisResponse<CmisObject>> {
-    const normalizedRepositoryPath = normalizeAbsolutePath(repositoryPath);
+    const normalizedRepositoryPath =
+      utils.normalizeAbsolutePath(repositoryPath);
 
     const formData = new FormData();
     formData.append("cmisaction", "checkOut");

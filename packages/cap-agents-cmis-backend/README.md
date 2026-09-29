@@ -4,22 +4,24 @@ A [Deep Agents](https://www.npmjs.com/package/deepagents) `BackendProtocolV2` fi
 
 ## Setup
 
-Install this package alongside `@sap/cds` (v10+) and `deepagents` (v1+). Configure a Cloud SDK destination pointing to the **SDM API base URL**, not the UAA URL or `/browser`, and give it access to an existing CMIS repository.
+Install this package alongside `@sap/cds` (v10+) and `deepagents` (v1+). Give the application access to an existing CMIS repository. Either configure a Cloud SDK destination pointing to the **SDM API base URL** (not the UAA URL or `/browser`), or bind an SDM service in Cloud Foundry.
 
 ```ts
 import { CmisBackend } from "@mi8y/cap-agents-cmis-backend";
 
 const backend = new CmisBackend({
-  destination: { destinationName: "SDM_API" }, // configured by your application
   repositoryId: "agent-files", // external CMIS repository ID
-  virtualRootPath: "/agent-content", // existing folder in the repository
+  destination: { destinationName: "SDM_API" }, // OPTIONAL: either provide a destination or rely on the SDM service binding
+  virtualRootPath: "/agent-content", // OPTIONAL: existing folder in the repository
 });
 
 await backend.write("/notes/todo.md", "First task\n");
 const result = await backend.read("/notes/todo.md");
 ```
 
-`repositoryId` may also be an async function returning an ID. If omitted, it is read from `cds.env.requires.sdm?.settings?.repositoryId`. The backend does not validate or provision a repository. The host application owns destination authentication and tenant isolation: configure a trusted destination for the relevant request or tenant rather than sharing a user-specific destination across tenants. Do not put credentials in package files or logs. The default Browser Binding path is `/browser` and can be changed with `browserBindingPath`.
+When `destination` is omitted, the client uses the Cloud SDK to select the CF service binding labeled `sdm`. It exchanges the **current CAP HTTP request's Bearer JWT** using the binding's nested `credentials.uaa` and sends CMIS calls to `credentials.uri`. This is JWT-bearer-only: requests without a bearer JWT fail; there is no client-credentials or background-job fallback. For jobs or multiple SDM bindings, provide an explicit trusted destination. The host remains responsible for authenticated request context and tenant isolation; do not share a user-specific destination across tenants or put credentials in logs.
+
+`repositoryId` may also be an async function returning an ID. If omitted, it is read from `cds.env.requires.sdm?.settings?.repositoryId`. The backend does not validate or provision a repository. The default Browser Binding path is `/browser` and can be changed with `browserBindingPath`.
 
 ## Filesystem behavior
 
@@ -29,7 +31,7 @@ The backend accepts **absolute virtual paths** (`virtualRootPath` defaults to `/
 
 ## Low-level client
 
-`SapCloudSdkCmisClient` is also exported for direct Browser Binding operations, including listing, reading, creating, updating, checking out/in, querying, and explicit deletion. Unlike the backend, its path arguments are **repository paths**; it does not apply `virtualRootPath`. Only use delete operations on paths you own. The client uses a host-supplied Cloud SDK destination and does not implement repository validation or connection/tenant management.
+`SapCloudSdkCmisClient` is also exported for direct Browser Binding operations, including listing, reading, creating, updating, checking out/in, querying, and explicit deletion. Unlike the backend, its path arguments are **repository paths**; it does not apply `virtualRootPath`. Only use delete operations on paths you own. The client uses either an explicit Cloud SDK destination or the request-scoped CF SDM binding fallback; it does not implement repository validation or provisioning.
 
 ## Development
 

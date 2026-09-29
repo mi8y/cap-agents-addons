@@ -1,3 +1,4 @@
+import cds from "@sap/cds";
 import type { BackendProtocolV2 } from "deepagents";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 import { CmisBackend } from "@/index";
@@ -61,6 +62,25 @@ function createBackend(options: Record<string, unknown> = {}) {
 
 describe("CmisBackend", () => {
   beforeEach(() => vi.restoreAllMocks());
+
+  test("returns a structured error without a request bearer JWT", async () => {
+    const previous = cds.context;
+    const executor = vi.fn();
+    try {
+      cds.context = undefined;
+      const backend = new CmisBackend({
+        repositoryId: "knowledge",
+        requestExecutor: executor,
+      });
+      await expect(backend.ls("/")).resolves.toEqual({
+        error:
+          "A bearer JWT in the current CAP request is required for the SDM service binding",
+      });
+      expect(executor).not.toHaveBeenCalled();
+    } finally {
+      cds.context = previous;
+    }
+  });
 
   test("implements the Deep Agents v2 backend protocol with one virtual root", () => {
     const backend: BackendProtocolV2 = createBackend({
