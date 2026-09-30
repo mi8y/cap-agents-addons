@@ -1,7 +1,7 @@
 import cds from "@sap/cds";
 import type { BackendProtocolV2 } from "deepagents";
 import { beforeEach, describe, expect, test, vi } from "vitest";
-import { CmisBackend } from "@/index";
+import { SdmBackend } from "@/index";
 import { CmisPropertyName, type CmisObject } from "@/types";
 
 function object(
@@ -52,7 +52,7 @@ function cmisError(
 }
 
 function createBackend(options: Record<string, unknown> = {}) {
-  return new CmisBackend({
+  return new SdmBackend({
     destination: { destinationName: "CMIS" },
     repositoryId: "knowledge",
     requestExecutor: vi.fn(),
@@ -60,7 +60,7 @@ function createBackend(options: Record<string, unknown> = {}) {
   });
 }
 
-describe("CmisBackend", () => {
+describe("SdmBackend", () => {
   beforeEach(() => vi.restoreAllMocks());
 
   test("returns a structured error without a request bearer JWT", async () => {
@@ -68,7 +68,7 @@ describe("CmisBackend", () => {
     const executor = vi.fn();
     try {
       cds.context = undefined;
-      const backend = new CmisBackend({
+      const backend = new SdmBackend({
         repositoryId: "knowledge",
         requestExecutor: executor,
       });
@@ -86,8 +86,8 @@ describe("CmisBackend", () => {
     const backend: BackendProtocolV2 = createBackend({
       virtualRootPath: "//agents//",
     });
-    expect(backend).toBeInstanceOf(CmisBackend);
-    expect((backend as CmisBackend).virtualRootPath).toBe("/agents");
+    expect(backend).toBeInstanceOf(SdmBackend);
+    expect((backend as SdmBackend).virtualRootPath).toBe("/agents");
   });
 
   test("lists all child pages with virtual paths and directory suffixes", async () => {

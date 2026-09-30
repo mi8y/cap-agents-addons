@@ -23,7 +23,7 @@ import {
 } from "./types";
 import * as utils from "./utils";
 
-const LOG = cds.log("cap-agents-cmis-backend");
+const LOG = cds.log("cap-agents-sdm-backend");
 
 export type CmisHttpRequestExecutor = (
   destination: HttpDestinationOrFetchOptions,

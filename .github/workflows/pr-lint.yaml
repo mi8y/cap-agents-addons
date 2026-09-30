@@ -48,7 +48,7 @@ jobs:
             cap-agents-memory
             cap-agents-cds-vectorstore
             cap-agents-aicore-vectorstore
-            cap-agents-cmis-backend
+            cap-agents-sdm-backend
             docs
             examples
             internal

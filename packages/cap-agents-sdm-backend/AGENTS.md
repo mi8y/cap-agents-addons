@@ -1,6 +1,6 @@
-# CAP Agents CMIS Backend Plugin
+# CAP Agents SDM Backend Plugin
 
-This package provides a Deep Agents Backend (implementing `BackendProtocolV2`) backed by a CMIS Browser Binding endpoint. HTTP calls must use the SAP Cloud SDK HTTP client so CAP applications can use service bindings, IAS/XSUAA tokens, destinations, proxies, and request middleware.
+This package provides a Deep Agents Backend (implementing `BackendProtocolV2`) for SAP Document Management Service (SDM) backed by a CMIS Browser Binding endpoint. HTTP calls must use the SAP Cloud SDK HTTP client so CAP applications can use service bindings, IAS/XSUAA tokens, destinations, proxies, and request middleware.
 
 ## Structure
 
@@ -9,7 +9,7 @@ This package provides a Deep Agents Backend (implementing `BackendProtocolV2`) b
 ├── AGENTS.md
 ├── src
 │   ├── index.ts
-│   ├── cmis-backend.ts # contains `BackendProtocolV2` adapter
+│   ├── sdm-backend.ts  # contains `BackendProtocolV2` adapter
 │   ├── client.ts       # contains CMIS Browser Binding transport
 │   └── utils.ts        # contains helpers
 ├── tests

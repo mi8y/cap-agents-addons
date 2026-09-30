@@ -23,6 +23,9 @@ This is a turbo-based monorepo containing CDS plugins for building production-re
 │   ├── cap-agents-aicore-vectorstore
 │   │   ├── AGENTS.md <- Read this for AICore Document Grounding based vectorstore plugin setup
 │   │   └── ...
+│   ├── cap-agents-sdm-backend
+│   │   ├── AGENTS.md <- Read this for SDM filesystem backend setup
+│   │   └── ...
 │   ├── cap-agents-utils
 │   │   ├── AGENTS.md <- Read this for common utils
 │   │   └── ...

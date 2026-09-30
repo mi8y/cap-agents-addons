@@ -1,15 +1,15 @@
-# @mi8y/cap-agents-cmis-backend
+# @mi8y/cap-agents-sdm-backend
 
-A [Deep Agents](https://www.npmjs.com/package/deepagents) `BackendProtocolV2` filesystem backed by an SAP Document Management Service (SDM) CMIS Browser Binding repository. HTTP requests use the SAP Cloud SDK. This package does not require `@cap-js/sdm` or manage repository provisioning.
+A [Deep Agents](https://www.npmjs.com/package/deepagents) `BackendProtocolV2` filesystem backend for SAP Document Management Service (SDM) repositories via CMIS Browser Binding. HTTP requests use the SAP Cloud SDK. This package does not require `@cap-js/sdm` or manage repository provisioning.
 
 ## Setup
 
 Install this package alongside `@sap/cds` (v10+) and `deepagents` (v1+). Give the application access to an existing CMIS repository. Either configure a Cloud SDK destination pointing to the **SDM API base URL** (not the UAA URL or `/browser`), or bind an SDM service in Cloud Foundry.
 
 ```ts
-import { CmisBackend } from "@mi8y/cap-agents-cmis-backend";
+import { SdmBackend } from "@mi8y/cap-agents-sdm-backend";
 
-const backend = new CmisBackend({
+const backend = new SdmBackend({
   repositoryId: "agent-files", // external CMIS repository ID
   destination: { destinationName: "SDM_API" }, // OPTIONAL: either provide a destination or rely on the SDM service binding
   virtualRootPath: "/agent-content", // OPTIONAL: existing folder in the repository
@@ -38,8 +38,8 @@ The backend accepts **absolute virtual paths** (`virtualRootPath` defaults to `/
 From the monorepo root:
 
 ```sh
-pnpm --filter @mi8y/cap-agents-cmis-backend build
-pnpm --filter @mi8y/cap-agents-cmis-backend test
+pnpm --filter @mi8y/cap-agents-sdm-backend build
+pnpm --filter @mi8y/cap-agents-sdm-backend test
 ```
 
 The local CMIS integration test is opt-in: set `CMIS_LIVE_DESTINATION` to a preconfigured, authenticated Cloud SDK destination and `CMIS_LIVE_REPOSITORY_ID` to a test repository. It creates and cleans up a unique test folder. The default test run skips it.

@@ -1,14 +1,14 @@
 {
-  "name": "@mi8y/cap-agents-cmis-backend",
+  "name": "@mi8y/cap-agents-sdm-backend",
   "version": "0.1.0",
-  "description": "CMIS Browser Binding filesystem backend for SAP CAP Agents",
+  "description": "SAP Document Management Service filesystem backend for CAP Agents via CMIS Browser Binding",
   "author": "Merbin J Anselm <merbin.j.anselm@mi8y.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mi8y/cap-agents-addons.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/mi8y/cap-agents-addons/tree/main/packages/cap-agents-cmis-backend",
+  "homepage": "https://github.com/mi8y/cap-agents-addons/tree/main/packages/cap-agents-sdm-backend",
   "bugs": {
     "url": "https://github.com/mi8y/cap-agents-addons/issues"
   },
@@ -35,6 +35,7 @@
     "cap",
     "cds",
     "cmis",
+    "sdm",
     "document-management",
     "deepagents",
     "filesystem",
@@ -74,7 +75,7 @@
   },
   "cds": {
     "requires": {
-      "cap-agents-cmis-backend": {}
+      "cap-agents-sdm-backend": {}
     }
   }
 }

@@ -377,49 +377,6 @@ importers:
         specifier: ^8.65.0
         version: 8.65.0(eslint@10.10.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
 
-  packages/cap-agents-cmis-backend:
-    dependencies:
-      '@sap-cloud-sdk/connectivity':
-        specifier: ^4.9.1
-        version: 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/http-client':
-        specifier: ^4.9.1
-        version: 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap/cds':
-        specifier: '>=10'
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
-      picomatch:
-        specifier: ^4.0.7
-        version: 4.0.7
-    devDependencies:
-      '@cap-js/cds-types':
-        specifier: ^0.20.0
-        version: 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
-      '@eslint/js':
-        specifier: ^10.0.1
-        version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
-      '@tsconfig/recommended':
-        specifier: ^1.0.13
-        version: 1.0.13
-      '@types/picomatch':
-        specifier: ^4.0.3
-        version: 4.0.3
-      '@typescript/typescript6':
-        specifier: ^6.0.2
-        version: 6.0.2
-      deepagents:
-        specifier: ^1
-        version: 1.13.3(@langchain/core@1.2.9)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.9))(@langchain/langgraph@1.4.14(@langchain/core@1.2.9)(zod@4.4.3))(langchain@1.5.10(@langchain/core@1.2.9))(langsmith@0.8.0)
-      eslint:
-        specifier: ^10.9.1
-        version: 10.10.0(supports-color@7.2.0)
-      typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
-      typescript-eslint:
-        specifier: ^8.65.0
-        version: 8.65.0(eslint@10.10.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
-
   packages/cap-agents-memory:
     dependencies:
       '@langchain/langgraph-checkpoint':
@@ -456,6 +413,49 @@ importers:
       '@typescript/typescript6':
         specifier: ^6.0.2
         version: 6.0.2
+      eslint:
+        specifier: ^10.9.1
+        version: 10.10.0(supports-color@7.2.0)
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
+      typescript-eslint:
+        specifier: ^8.65.0
+        version: 8.65.0(eslint@10.10.0(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
+
+  packages/cap-agents-sdm-backend:
+    dependencies:
+      '@sap-cloud-sdk/connectivity':
+        specifier: ^4.9.1
+        version: 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
+      '@sap-cloud-sdk/http-client':
+        specifier: ^4.9.1
+        version: 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
+      '@sap/cds':
+        specifier: '>=10'
+        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      picomatch:
+        specifier: ^4.0.7
+        version: 4.0.7
+    devDependencies:
+      '@cap-js/cds-types':
+        specifier: ^0.20.0
+        version: 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
+      '@eslint/js':
+        specifier: ^10.0.1
+        version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
+      '@tsconfig/recommended':
+        specifier: ^1.0.13
+        version: 1.0.13
+      '@types/picomatch':
+        specifier: ^4.0.3
+        version: 4.0.3
+      '@typescript/typescript6':
+        specifier: ^6.0.2
+        version: 6.0.2
+      deepagents:
+        specifier: ^1
+        version: 1.13.3(@langchain/core@1.2.9)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.9))(@langchain/langgraph@1.4.14(@langchain/core@1.2.9)(zod@4.4.3))(langchain@1.5.10(@langchain/core@1.2.9))(langsmith@0.8.0)
       eslint:
         specifier: ^10.9.1
         version: 10.10.0(supports-color@7.2.0)

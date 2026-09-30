@@ -20,7 +20,7 @@ export default defineConfig({
     minify: false,
     lib: {
       entry: "src/index.ts",
-      name: "@mi8y/cap-agents-cmis-backend",
+      name: "@mi8y/cap-agents-sdm-backend",
       fileName: "index",
       formats: ["es", "cjs"],
     },
@@ -36,7 +36,7 @@ export default defineConfig({
   },
 
   test: {
-    name: "cap-agents-cmis-backend",
+    name: "cap-agents-sdm-backend",
     globals: true,
     root: import.meta.dirname,
     environment: "node",

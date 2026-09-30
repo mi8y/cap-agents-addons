@@ -8,7 +8,7 @@ import {
   Service,
 } from "@sap-cloud-sdk/connectivity";
 
-const LOG = cds.log("cap-agents-cmis-backend");
+const LOG = cds.log("cap-agents-sdm-backend");
 
 /** Normalize an absolute path and reject traversal or invalid separators. */
 export function normalizeAbsolutePath(filePath: string): string {

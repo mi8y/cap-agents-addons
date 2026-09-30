@@ -23,13 +23,13 @@ import {
 import * as utils from "./utils";
 import cds from "@sap/cds";
 
-const LOG = cds.log("cap-agents-cmis-backend");
+const LOG = cds.log("cap-agents-sdm-backend");
 
 const DEFAULT_PAGE_SIZE = 100;
 const DEFAULT_MAX_TRAVERSAL_ITEMS = 10_000;
 const DEFAULT_MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
 
-export type CmisBackendConfig = CmisHttpClientConfig & {
+export type SdmBackendConfig = CmisHttpClientConfig & {
   /**
    * CMIS folder exposed as `/` to Deep Agents.
    *
@@ -64,8 +64,8 @@ type WalkResult = {
   truncated: boolean;
 };
 
-/** CMIS-backed Deep Agents filesystem. */
-export class CmisBackend implements BackendProtocolV2 {
+/** SDM-backed Deep Agents filesystem using CMIS Browser Binding. */
+export class SdmBackend implements BackendProtocolV2 {
   readonly client: SapCloudSdkCmisClient;
   readonly virtualRootPath: string;
   readonly #maxTraversalItems: number;
@@ -73,7 +73,7 @@ export class CmisBackend implements BackendProtocolV2 {
   readonly #maxFileSize: number;
 
   /** Configure the virtual root, traversal limits, and CMIS transport. */
-  constructor(config: CmisBackendConfig) {
+  constructor(config: SdmBackendConfig) {
     const configuredRoot = config.virtualRootPath ?? "/";
     this.virtualRootPath = utils.normalizeAbsolutePath(configuredRoot);
     this.#maxTraversalItems =
@@ -95,7 +95,7 @@ export class CmisBackend implements BackendProtocolV2 {
     }
 
     this.client = new SapCloudSdkCmisClient(config);
-    LOG.debug("Initialized CMIS filesystem backend");
+    LOG.debug("Initialized SDM filesystem backend");
   }
 
   /** Translate one agent-visible path into a repository path. */
@@ -749,8 +749,8 @@ export class CmisBackend implements BackendProtocolV2 {
     const status = this.#status(error);
     LOG.debug(
       status === undefined
-        ? "CMIS backend operation failed"
-        : `CMIS backend operation failed (HTTP ${status})`,
+        ? "SDM backend operation failed"
+        : `SDM backend operation failed (HTTP ${status})`,
     );
     if (status === 401) return "SDM authentication required (HTTP 401)";
     if (status === 403) return "SDM access denied (HTTP 403)";

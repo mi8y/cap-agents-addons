@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { describe, expect, test } from "vitest";
-import { CmisBackend } from "@/index";
+import { SdmBackend } from "@/index";
 
 // Configure a Cloud SDK destination with base URL http://localhost:8001 and
 // authentication outside this package. Never pass a credential to this test.
@@ -11,8 +11,8 @@ describe.runIf(Boolean(destinationName && repositoryId))(
   "live SDM Browser Binding",
   () => {
     test("validates and exercises all operations under a virtual root", async () => {
-      const root = `/cmis-backend-test-${randomUUID()}`;
-      const backend = new CmisBackend({
+      const root = `/sdm-backend-test-${randomUUID()}`;
+      const backend = new SdmBackend({
         repositoryId: repositoryId!,
         destination: { destinationName: destinationName! },
         virtualRootPath: root,
