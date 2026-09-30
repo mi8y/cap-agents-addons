@@ -64,7 +64,21 @@ cds add agent-aicore-vectorstore
 
 ![Demo of CAP Agents AI-Core Vector Store](./docs/images/demo-cap-agents-aicore-vectorstore.gif)
 
-### 4. LangGraph checkpoint persistence
+### 4. Filesystem backend (SAP Document Management Service)
+
+- **Package**: [`@mi8y/cap-agents-sdm-backend`](https://www.npmjs.com/package/@mi8y/cap-agents-sdm-backend)
+
+- **Description**: Deep Agents `BackendProtocolV2` filesystem backed by an existing SAP Document Management Service (SDM) repository via CMIS Browser Binding. Use it for agent files, knowledge bases, and skills without storing documents in CAP.
+
+```sh
+npm install @mi8y/cap-agents-sdm-backend
+```
+
+Configure a Cloud SDK destination for the SDM API or bind an SDM service in Cloud Foundry. No `cds add` step or repository provisioning is provided.
+
+- **More Info**: [CAP Agents SDM Backend README](./packages/cap-agents-sdm-backend/README.md)
+
+### 5. LangGraph checkpoint persistence
 
 > [!WARNING]
 >
