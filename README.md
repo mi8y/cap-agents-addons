@@ -11,7 +11,7 @@ A collection of CAP CDS plugins for building production-ready AI agents with SAP
 | [**Memory Store**](https://docs.langchain.com/oss/javascript/langgraph/stores) / [Long-term Memory](https://docs.langchain.com/oss/javascript/langchain/long-term-memory)                        | [`@mi8y/cap-agents-memory`](./packages/cap-agents-memory/README.md)                         | ![npm version](https://img.shields.io/npm/v/@mi8y/cap-agents-memory)             | Long-term, cross-thread memory for agent facts and user preferences. |
 | [**Vector Store**](https://docs.langchain.com/oss/javascript/integrations/vectorstores/index) (CDS-based)                                                                                        | [`@mi8y/cap-agents-cds-vectorstore`](./packages/cap-agents-cds-vectorstore/README.md)       | ![npm version](https://img.shields.io/npm/v/@mi8y/cap-agents-cds-vectorstore)    | CDS-backed vector retrieval for RAG and semantic search.             |
 | [**Vector Store**](https://docs.langchain.com/oss/javascript/integrations/vectorstores/index) (AI-Core Document-Grounding based)                                                                 | [`@mi8y/cap-agents-aicore-vectorstore`](./packages/cap-agents-aicore-vectorstore/README.md) | ![npm version](https://img.shields.io/npm/v/@mi8y/cap-agents-aicore-vectorstore) | Managed document-grounding retrieval for RAG and semantic search.    |
-| [**Backend** (Filesystem)](https://docs.langchain.com/oss/javascript/deepagents/backends)                                                                                                        | [`@mi8y/cap-agents-cmis-backend`](./packages/cap-agents-cmis-backend/README.md)             | ![npm version](https://img.shields.io/npm/v/@mi8y/cap-agents-cmis-backend)       | CMIS-backed knowledge bases and agent skills.                        |
+| [**Backend** (Filesystem)](https://docs.langchain.com/oss/javascript/deepagents/backends)                                                                                                        | [`@mi8y/cap-agents-sdm-backend`](./packages/cap-agents-sdm-backend/README.md)               | ![npm version](https://img.shields.io/npm/v/@mi8y/cap-agents-sdm-backend)        | SDM-backed knowledge bases and agent skills via CMIS.                |
 | (⚠️ Deprecated) [**Checkpointer**](https://docs.langchain.com/oss/javascript/langgraph/checkpointers)/[Short-term Memory](https://docs.langchain.com/oss/javascript/langchain/short-term-memory) | [`@mi8y/cds-langgraph-persistence`](./packages/cds-langgraph-persistence/README.md)         | ![npm version](https://img.shields.io/npm/v/@mi8y/cds-langgraph-persistence)     | Short-term, thread-scoped LangGraph checkpoint persistence.          |
 
 ## Available Packages
@@ -64,7 +64,21 @@ cds add agent-aicore-vectorstore
 
 ![Demo of CAP Agents AI-Core Vector Store](./docs/images/demo-cap-agents-aicore-vectorstore.gif)
 
-### 4. LangGraph checkpoint persistence
+### 4. Filesystem backend (SAP Document Management Service)
+
+- **Package**: [`@mi8y/cap-agents-sdm-backend`](https://www.npmjs.com/package/@mi8y/cap-agents-sdm-backend)
+
+- **Description**: Deep Agents `BackendProtocolV2` filesystem backed by an existing SAP Document Management Service (SDM) repository via CMIS Browser Binding. Use it for agent files, knowledge bases, and skills without storing documents in CAP.
+
+```sh
+npm install @mi8y/cap-agents-sdm-backend
+```
+
+Configure a Cloud SDK destination for the SDM API or bind an SDM service in Cloud Foundry. No `cds add` step or repository provisioning is provided.
+
+- **More Info**: [CAP Agents SDM Backend README](./packages/cap-agents-sdm-backend/README.md)
+
+### 5. LangGraph checkpoint persistence
 
 > [!WARNING]
 >
