@@ -4,11 +4,11 @@
   "type": "module",
   "private": true,
   "dependencies": {
-    "@langchain/core": "^1.2.9",
+    "@langchain/core": "^1.2.13",
     "@mi8y/cds-langgraph-persistence": "workspace:*",
     "@sap-ai-sdk/langchain": "^2.12.0",
     "@sap/cds": "^10",
-    "langchain": "^1.5.10",
+    "langchain": "^1.5.14",
     "zod": "^4.4.3"
   },
   "devDependencies": {
