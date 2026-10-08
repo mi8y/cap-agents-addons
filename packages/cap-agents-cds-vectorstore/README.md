@@ -24,7 +24,7 @@ This creates `db/agent-cds-vectorstore.cds` with two concrete entities (`Documen
 
 Requires:
 
-- `@sap/cds >= 9`
+- `@sap/cds >= 10`
 - `@langchain/core >= 1`
 
 ## What it adds
@@ -172,7 +172,7 @@ const retriever = vectorStore.asRetriever({
   k: 2,
   filter: {
     topic: "cap",
-    priority: { $gte: 2 },
+    priority: { $in: [2, 3] },
   },
 });
 
