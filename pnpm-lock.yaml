@@ -198,25 +198,25 @@ importers:
     dependencies:
       '@cap-js/agents':
         specifier: ^0.9.3
-        version: 0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.9))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
+        version: 0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
       '@langchain/core':
-        specifier: ^1.2.9
-        version: 1.2.9
+        specifier: ^1.2.13
+        version: 1.2.13
       '@langchain/textsplitters':
-        specifier: ^1.0.1
-        version: 1.0.1(@langchain/core@1.2.9)
+        specifier: ^1.0.2
+        version: 1.0.2(@langchain/core@1.2.13)
       '@mi8y/cap-agents-aicore-vectorstore':
         specifier: workspace:*
         version: link:../../packages/cap-agents-aicore-vectorstore
       '@sap-ai-sdk/langchain':
         specifier: ^2.15.0
-        version: 2.15.0(@langchain/core@1.2.9)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.10(@langchain/core@1.2.9))(supports-color@7.2.0)
+        version: 2.15.0(@langchain/core@1.2.13)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.14(@langchain/core@1.2.13))(supports-color@7.2.0)
       '@sap/cds':
         specifier: ^10
         version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       langchain:
-        specifier: ^1.5.10
-        version: 1.5.10(@langchain/core@1.2.9)
+        specifier: ^1.5.14
+        version: 1.5.14(@langchain/core@1.2.13)
       zod:
         specifier: ^4.4.3
         version: 4.4.3
@@ -229,25 +229,25 @@ importers:
     dependencies:
       '@cap-js/agents':
         specifier: ^0.9.3
-        version: 0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.9))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
+        version: 0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
       '@langchain/core':
-        specifier: ^1.2.9
-        version: 1.2.9
+        specifier: ^1.2.13
+        version: 1.2.13
       '@langchain/textsplitters':
-        specifier: ^1.0.1
-        version: 1.0.1(@langchain/core@1.2.9)
+        specifier: ^1.0.2
+        version: 1.0.2(@langchain/core@1.2.13)
       '@mi8y/cap-agents-cds-vectorstore':
         specifier: workspace:*
         version: link:../../packages/cap-agents-cds-vectorstore
       '@sap-ai-sdk/langchain':
         specifier: ^2.15.0
-        version: 2.15.0(@langchain/core@1.2.9)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.10(@langchain/core@1.2.9))(supports-color@7.2.0)
+        version: 2.15.0(@langchain/core@1.2.13)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.14(@langchain/core@1.2.13))(supports-color@7.2.0)
       '@sap/cds':
         specifier: ^10
         version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       langchain:
-        specifier: ^1.5.10
-        version: 1.5.10(@langchain/core@1.2.9)
+        specifier: ^1.5.14
+        version: 1.5.14(@langchain/core@1.2.13)
       zod:
         specifier: ^4.4.3
         version: 4.4.3
@@ -260,7 +260,7 @@ importers:
     dependencies:
       '@cap-js/agents':
         specifier: ^0.9.3
-        version: 0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.9))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
+        version: 0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
       '@mi8y/cap-agents-memory':
         specifier: workspace:*
         version: link:../../packages/cap-agents-memory
@@ -268,8 +268,8 @@ importers:
         specifier: ^10
         version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       langchain:
-        specifier: ^1.5.10
-        version: 1.5.10(@langchain/core@1.2.9)
+        specifier: ^1.5.14
+        version: 1.5.14(@langchain/core@1.2.13)
       zod:
         specifier: ^4.4.3
         version: 4.4.3
@@ -281,20 +281,20 @@ importers:
   examples/langchain-cds-persistence:
     dependencies:
       '@langchain/core':
-        specifier: ^1.2.9
-        version: 1.2.9
+        specifier: ^1.2.13
+        version: 1.2.13
       '@mi8y/cds-langgraph-persistence':
         specifier: workspace:*
         version: link:../../packages/cds-langgraph-persistence
       '@sap-ai-sdk/langchain':
         specifier: ^2.12.0
-        version: 2.12.0(@langchain/core@1.2.9)(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
+        version: 2.15.0(@langchain/core@1.2.13)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.14(@langchain/core@1.2.13))(supports-color@7.2.0)
       '@sap/cds':
         specifier: ^10
         version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       langchain:
-        specifier: ^1.5.10
-        version: 1.5.10(@langchain/core@1.2.9)
+        specifier: ^1.5.14
+        version: 1.5.14(@langchain/core@1.2.13)
       zod:
         specifier: ^4.4.3
         version: 4.4.3
@@ -313,8 +313,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
       '@langchain/core':
-        specifier: ^1.2.9
-        version: 1.2.9
+        specifier: ^1.2.13
+        version: 1.2.13
       '@sap/cds':
         specifier: '>=10'
         version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
@@ -353,8 +353,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
       '@langchain/core':
-        specifier: ^1.2.9
-        version: 1.2.9
+        specifier: ^1.2.13
+        version: 1.2.13
       '@sap/cds':
         specifier: '>=10'
         version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
@@ -381,7 +381,7 @@ importers:
     dependencies:
       '@langchain/langgraph-checkpoint':
         specifier: ^1.1.5
-        version: 1.1.5(@langchain/core@1.2.9)
+        version: 1.1.5(@langchain/core@1.2.13)
       '@mi8y/cap-agents-utils':
         specifier: workspace:*
         version: link:../cap-agents-utils
@@ -399,8 +399,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
       '@langchain/core':
-        specifier: ^1.2.9
-        version: 1.2.9
+        specifier: ^1.2.13
+        version: 1.2.13
       '@sap/cds':
         specifier: '>=10'
         version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
@@ -455,7 +455,7 @@ importers:
         version: 6.0.2
       deepagents:
         specifier: ^1
-        version: 1.13.3(@langchain/core@1.2.9)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.9))(@langchain/langgraph@1.4.14(@langchain/core@1.2.9)(zod@4.4.3))(langchain@1.5.10(@langchain/core@1.2.9))(langsmith@0.8.0)
+        version: 1.13.3(@langchain/core@1.2.13)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@langchain/langgraph@1.4.14(@langchain/core@1.2.13)(zod@4.4.3))(langchain@1.5.14(@langchain/core@1.2.13))(langsmith@0.8.0)
       eslint:
         specifier: ^10.9.1
         version: 10.10.0(supports-color@7.2.0)
@@ -500,7 +500,7 @@ importers:
     dependencies:
       '@langchain/langgraph-checkpoint':
         specifier: ^1.1.5
-        version: 1.1.5(@langchain/core@1.2.9)
+        version: 1.1.5(@langchain/core@1.2.13)
     devDependencies:
       '@cap-js/cds-typer':
         specifier: ^0.41.0
@@ -515,11 +515,11 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
       '@langchain/core':
-        specifier: ^1.2.9
-        version: 1.2.9
+        specifier: ^1.2.13
+        version: 1.2.13
       '@langchain/langgraph-checkpoint-validation':
         specifier: ^1.1.1
-        version: 1.1.1(@langchain/core@1.2.9)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@types/node@26.1.1)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@26.1.1)(yaml@2.9.0))
+        version: 1.1.1(@langchain/core@1.2.13)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@types/node@26.1.1)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@26.1.1)(yaml@2.9.0))
       '@mi8y/cap-agents-utils':
         specifier: workspace:*
         version: link:../cap-agents-utils
@@ -559,7 +559,7 @@ importers:
         version: 0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
       '@langchain/langgraph-checkpoint':
         specifier: ^1.1.5
-        version: 1.1.5(@langchain/core@1.2.9)
+        version: 1.1.5(@langchain/core@1.2.13)
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -900,8 +900,8 @@ packages:
     peerDependencies:
       '@langchain/core': ^1.2.9
 
-  '@langchain/core@1.2.9':
-    resolution: {integrity: sha512-conzSEj9Zu1AyXJLXsSbgrtxtxinmI1yGqQ5CIJZSoV5rvv+yvQE/vgBnoySpBQ/bl3YPgj2FL/gbDjWykLSfg==}
+  '@langchain/core@1.2.13':
+    resolution: {integrity: sha512-ADGTxZ84n3civruUX1LlTOdua/PDGoni2U6TmKTX7hvRU2Jlepu8vLJI4Wnwj45KUKhUCrW94Il12Q2bxE3e8A==}
     engines: {node: '>=20'}
 
   '@langchain/langgraph-checkpoint-validation@1.1.1':
@@ -947,8 +947,8 @@ packages:
   '@langchain/protocol@0.0.19':
     resolution: {integrity: sha512-9hKcRrH7cBX6gfutdfXPoft1OCchHe4FEpALoDJMl5Qu+n/YG5ynZmyu8+8cxORlPwHBoKTxggvXz+76M1yX1Q==}
 
-  '@langchain/textsplitters@1.0.1':
-    resolution: {integrity: sha512-rheJlB01iVtrOUzttscutRgLybPH9qR79EyzBEbf1u97ljWyuxQfCwIWK+SjoQTM9O8M7GGLLRBSYE26Jmcoww==}
+  '@langchain/textsplitters@1.0.2':
+    resolution: {integrity: sha512-UNCmlyFIRlRfVxqpmcRsp1jQrscnIVVqRKrrjFF2wHHq+VGTv+VDkGZLyEVUopJfHIdaiXfOKlSrROQui7VLFA==}
     engines: {node: '>=20'}
     peerDependencies:
       '@langchain/core': ^1.0.0
@@ -1120,14 +1120,8 @@ packages:
       rollup:
         optional: true
 
-  '@sap-ai-sdk/ai-api@2.12.0':
-    resolution: {integrity: sha512-eIN3VS7W8gDZ1yn+B59QHGs11yLE24Ux6+zLqza3zWd4X2efFfKs4Ut95BoDRfSQOUcSofZTPzRfI7mxjrv+Fg==}
-
   '@sap-ai-sdk/ai-api@2.15.0':
     resolution: {integrity: sha512-tW2XwemZ5mWuYQW9P2mFxaH7xNBWwr1+AU8jnfleCE7IQ494+OKmjhWOASrfNWRRnRrcepaAbjk2earpjcIcBA==}
-
-  '@sap-ai-sdk/core@2.12.0':
-    resolution: {integrity: sha512-hPCRVCBQkBXlxY+6y6H43ZTgkw9kbpd/aUyKbZz+avBkuvug4QXRHDgVslwxl6r+ejM4bg6ivTN4rDiWpB4Cag==}
 
   '@sap-ai-sdk/core@2.15.0':
     resolution: {integrity: sha512-GbPq4GC6LNVoGDMDnNsAdK0PDQSl3QsJQ5Dy7Zx+1f14i6DDcHpoJWBeyDzlfEBtQ0CUgF7sRKRUt2ufnzCpdg==}
@@ -1135,16 +1129,8 @@ packages:
   '@sap-ai-sdk/document-grounding@2.15.0':
     resolution: {integrity: sha512-5p1OnhbKfwMuUC/yOo9DC/OldeLiUHWqITsNDH5nUOc1D2/8Loa+ARQOmquZphLD43TnjoouOCO2IbJ5JeEGQA==}
 
-  '@sap-ai-sdk/foundation-models@2.12.0':
-    resolution: {integrity: sha512-9hMo4k2QQiVzzQ7CJvlsHo4yT/NUFviir+X0Pj7EmQvmExqVUufF31uSA4LPU7+zkx0no/oIY23l0EQCIVRxgA==}
-
   '@sap-ai-sdk/foundation-models@2.15.0':
     resolution: {integrity: sha512-UTuFBJUQfaK1xVx041v0iWkCC/LD4DJxlvxTOCNTu1AuC1p+TTLAR2WcvxqW6vIduREMXIxOjbaDJwfr1d+kgg==}
-
-  '@sap-ai-sdk/langchain@2.12.0':
-    resolution: {integrity: sha512-IByUVXPExl6r2uT24nSzEIDjAebGl5gD+R0CWy4U/zc+dQJY4e2kOrvuz4VWzUGcFKUBHs5rJ7uSSsUQ6LAfqA==}
-    peerDependencies:
-      '@langchain/core': ^1.2.0
 
   '@sap-ai-sdk/langchain@2.15.0':
     resolution: {integrity: sha512-sGaj669DrjgXQzjQLnN1hA1ZGhbooIhoN/em+ao9CS0MdjJ7vTUvvwm78XoFI7el3L8OpgiceudLpPqnRSQ/Uw==}
@@ -1155,44 +1141,23 @@ packages:
       langchain:
         optional: true
 
-  '@sap-ai-sdk/orchestration@2.12.0':
-    resolution: {integrity: sha512-8bteUuX+4uN4KzKllpBy4UkslTTk78DMo86v+Ohs3/HgQCw5lKqVWh0VH+NR9iQz+LOcLUPYi9EhuFEDIveNBg==}
-
   '@sap-ai-sdk/orchestration@2.15.0':
     resolution: {integrity: sha512-wxpzZLzhi47eFMLJbymeO9XmZajpqQVHyk6iZ0Plwa7V/aD2UlEJVDbC9FvzVgdm6z6+jkx8VD1irapW1YtfdA==}
-
-  '@sap-ai-sdk/prompt-registry@2.12.0':
-    resolution: {integrity: sha512-V9u9S91MchX2d246+Jv7ryMR6yy1F35MZpu033czvhpz35CnJlrksTRoarGXcVlpW8q65ru5Oh8QryVZDi6RgA==}
 
   '@sap-ai-sdk/prompt-registry@2.15.0':
     resolution: {integrity: sha512-qC3ACUsV+Cw+DfjMj/GSw5DY0XymwCQDzclvr4LArZ2OH0DhMrbzJMPqBSIYCyVF8zq57PNMnJoJrx1vE8CLHQ==}
 
-  '@sap-cloud-sdk/connectivity@4.7.0':
-    resolution: {integrity: sha512-+EgdTpGi3ZomPuv/ab+bWQIxUfJvownW2MzdYSvX7hkEkmKJfod0O6ja2OqC+OJBLm1TE0JpbJ6AcCkqeZYuOg==}
-
   '@sap-cloud-sdk/connectivity@4.9.1':
     resolution: {integrity: sha512-0deJBmdUd1LD1O3CX/wqYjTEKmnrnLsxnrSE8CyGtzbyomjjL1ePEXB3g6QUpQKmClVyOgJG/IbpyJFGGXXL5A==}
-
-  '@sap-cloud-sdk/http-client@4.7.0':
-    resolution: {integrity: sha512-7+S6ru7SrnyKA2MGimX09oix0EVwmPGcCAz0TRwFZVnglU+VTRmZ8QdcwcVTR26E9YhkR4OVl6EK7jb2Z0OxfQ==}
 
   '@sap-cloud-sdk/http-client@4.9.1':
     resolution: {integrity: sha512-bsF8T/syitm+GI8eInOB1AfvHsTYJ8Qvg5dfGt5SGXEQjqV2amFEulPp7edNTzCLo0+BBbBa/jhvqLCvXSoV6A==}
 
-  '@sap-cloud-sdk/openapi@4.7.0':
-    resolution: {integrity: sha512-OKTEGVScCRsfgL9Lk/bEKcGnyfq0GgruXuZfsxoMbTqbe2f9X/fgHgXIWQEkTuXQplkrSDiNFRyvl0n/ON9Ycg==}
-
   '@sap-cloud-sdk/openapi@4.9.1':
     resolution: {integrity: sha512-o46XbWWjo4piTPsLWPE9yuGCNS8jIj1GfZSJpaHdWDO6ZF+CqaUwF21UtGTg0SJggoe6AsJlhVObL7QA6urcJg==}
 
-  '@sap-cloud-sdk/resilience@4.7.0':
-    resolution: {integrity: sha512-L6PV49nNyZHnTNFbvaufadm+qOhaammXLXkDQmD7WIzMjhiYMqa/obK3NJoohe/kZ7q73jPB2vdLsAqopqTh0A==}
-
   '@sap-cloud-sdk/resilience@4.9.1':
     resolution: {integrity: sha512-14Hdd2VqEd3BarikR/ChZjquQuelC+CP69HKdMycADmmsuQEwaJkSXURW8cDl19bfx8Re1ldM/4Ig0gbCY4x/A==}
-
-  '@sap-cloud-sdk/util@4.7.0':
-    resolution: {integrity: sha512-nWJXMdM0Pcx/ipM2+5BvSciQKyCc0LAAO+acCOAQp65SA4HEQ2Odp9yxidY4ijW42TVp3fSMBvGwVjbWWx9Uew==}
 
   '@sap-cloud-sdk/util@4.9.1':
     resolution: {integrity: sha512-1tuv+c6o2Y8/1F3UEdqiv3TPWzZDpCjxuDpAFtFBM8C+weum8ixgwc2YXEWvBzWvtSEl7C5L/o8jBqiuhcXF4w==}
@@ -2401,11 +2366,11 @@ packages:
   kuler@2.0.0:
     resolution: {integrity: sha512-Xq9nH7KlWZmXAtodXDDRE7vs6DU1gTU8zYDHDiWLSip45Egwq3plLHzPn27NgvzL2r1LMPC1vdqh98sQxtqj4A==}
 
-  langchain@1.5.10:
-    resolution: {integrity: sha512-JaC12C1qyGn985vvjttr4hr8lfFzWhrXp2M1byZJGmNJ2RiIgqnhiYDuLlG/xHDxhKD3onJ5pCuUif/cbdqPhA==}
+  langchain@1.5.14:
+    resolution: {integrity: sha512-/orHDk5xbNSIJc9UhwmxFYHXbr/3RaBeQ3zX0xovEWfPg7Lmj8EJCMOXIUTCe2UtsFgfbyWtlwh51NM562LnZQ==}
     engines: {node: '>=20'}
     peerDependencies:
-      '@langchain/core': ^1.2.9
+      '@langchain/core': ^1.2.13
 
   langsmith@0.8.0:
     resolution: {integrity: sha512-edm/zZ1jMQRt0GzavmJ0YPIsqKkXetffIpmR29li8P0SoZ0MI/xKk/tIAkPnxHCybmzJesIQf5CT7eLQCqv3kA==}
@@ -2697,10 +2662,6 @@ packages:
   opossum@10.0.0:
     resolution: {integrity: sha512-sghtqL8Usj+et06Zui0nyn0R6FFsl7cyuoU+d7MctYU0nbS7Htzjleh+tWohFqk1Rp1srrFwbFa8Vxd0O64w6A==}
     engines: {node: ^26 || ^24 || ^22}
-
-  opossum@9.0.0:
-    resolution: {integrity: sha512-K76U0QkxOfUZamneQuzz+AP0fyfTJcCplZ2oZL93nxeupuJbN4s6uFNbmVCt4eWqqGqRnnowdFuBicJ1fLMVxw==}
-    engines: {node: ^24 || ^22 || ^20}
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -3428,21 +3389,21 @@ snapshots:
       hashery: 1.5.1
       keyv: 5.6.0
 
-  '@cap-js/agents@0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.9))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)':
+  '@cap-js/agents@0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)':
     dependencies:
       '@a2a-js/sdk': 0.3.14(express@5.2.1(supports-color@7.2.0))
       '@cap-js/attachments': 4.0.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
       '@cap-js/mcp': 1.4.3(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)
-      '@langchain/anthropic': 1.5.9(@langchain/core@1.2.9)
-      '@langchain/core': 1.2.9
-      '@langchain/langgraph': 1.4.14(@langchain/core@1.2.9)(zod@4.4.3)
-      '@langchain/mcp-adapters': 1.1.4(@cfworker/json-schema@4.1.1)(@langchain/core@1.2.9)(@langchain/langgraph@1.4.14(@langchain/core@1.2.9)(zod@4.4.3))(supports-color@7.2.0)
-      '@sap-ai-sdk/langchain': 2.15.0(@langchain/core@1.2.9)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.10(@langchain/core@1.2.9))(supports-color@7.2.0)
+      '@langchain/anthropic': 1.5.9(@langchain/core@1.2.13)
+      '@langchain/core': 1.2.13
+      '@langchain/langgraph': 1.4.14(@langchain/core@1.2.13)(zod@4.4.3)
+      '@langchain/mcp-adapters': 1.1.4(@cfworker/json-schema@4.1.1)(@langchain/core@1.2.13)(@langchain/langgraph@1.4.14(@langchain/core@1.2.13)(zod@4.4.3))(supports-color@7.2.0)
+      '@sap-ai-sdk/langchain': 2.15.0(@langchain/core@1.2.13)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.14(@langchain/core@1.2.13))(supports-color@7.2.0)
       '@sap-ai-sdk/orchestration': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
-      deepagents: 1.13.3(@langchain/core@1.2.9)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.9))(@langchain/langgraph@1.4.14(@langchain/core@1.2.9)(zod@4.4.3))(langchain@1.5.10(@langchain/core@1.2.9))(langsmith@0.8.0)
-      langchain: 1.5.10(@langchain/core@1.2.9)
+      deepagents: 1.13.3(@langchain/core@1.2.13)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@langchain/langgraph@1.4.14(@langchain/core@1.2.13)(zod@4.4.3))(langchain@1.5.14(@langchain/core@1.2.13))(langsmith@0.8.0)
+      langchain: 1.5.14(@langchain/core@1.2.13)
       marked: 18.0.12
       zod: 4.4.3
     transitivePeerDependencies:
@@ -3731,13 +3692,13 @@ snapshots:
 
   '@keyv/serialize@1.1.1': {}
 
-  '@langchain/anthropic@1.5.9(@langchain/core@1.2.9)':
+  '@langchain/anthropic@1.5.9(@langchain/core@1.2.13)':
     dependencies:
       '@anthropic-ai/sdk': 0.120.0(zod@4.4.3)
-      '@langchain/core': 1.2.9
+      '@langchain/core': 1.2.13
       zod: 4.4.3
 
-  '@langchain/core@1.2.9':
+  '@langchain/core@1.2.13':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       '@standard-schema/spec': 1.1.0
@@ -3753,10 +3714,10 @@ snapshots:
       - openai
       - ws
 
-  '@langchain/langgraph-checkpoint-validation@1.1.1(@langchain/core@1.2.9)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@types/node@26.1.1)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@26.1.1)(yaml@2.9.0))':
+  '@langchain/langgraph-checkpoint-validation@1.1.1(@langchain/core@1.2.13)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@types/node@26.1.1)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@26.1.1)(yaml@2.9.0))':
     dependencies:
-      '@langchain/core': 1.2.9
-      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.9)
+      '@langchain/core': 1.2.13
+      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.13)
       vitest: 4.1.11(@types/node@26.1.1)(@vitest/coverage-v8@4.1.11)(vite@8.2.2(@types/node@26.1.1)(yaml@2.9.0))
       yargs: 17.7.3
       zod: 4.4.3
@@ -3775,23 +3736,23 @@ snapshots:
       - msw
       - vite
 
-  '@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9)':
+  '@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13)':
     dependencies:
-      '@langchain/core': 1.2.9
+      '@langchain/core': 1.2.13
 
-  '@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.9)':
+  '@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13)':
     dependencies:
-      '@langchain/core': 1.2.9
+      '@langchain/core': 1.2.13
       '@langchain/protocol': 0.0.19
       '@types/json-schema': 7.0.15
       p-queue: 9.3.1
       p-retry: 7.1.1
 
-  '@langchain/langgraph@1.4.14(@langchain/core@1.2.9)(zod@4.4.3)':
+  '@langchain/langgraph@1.4.14(@langchain/core@1.2.13)(zod@4.4.3)':
     dependencies:
-      '@langchain/core': 1.2.9
-      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.9)
-      '@langchain/langgraph-sdk': 1.10.2(@langchain/core@1.2.9)
+      '@langchain/core': 1.2.13
+      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.13)
+      '@langchain/langgraph-sdk': 1.10.2(@langchain/core@1.2.13)
       '@langchain/protocol': 0.0.19
       '@standard-schema/spec': 1.1.0
       zod: 4.4.3
@@ -3799,10 +3760,10 @@ snapshots:
       - react
       - react-dom
 
-  '@langchain/mcp-adapters@1.1.4(@cfworker/json-schema@4.1.1)(@langchain/core@1.2.9)(@langchain/langgraph@1.4.14(@langchain/core@1.2.9)(zod@4.4.3))(supports-color@7.2.0)':
+  '@langchain/mcp-adapters@1.1.4(@cfworker/json-schema@4.1.1)(@langchain/core@1.2.13)(@langchain/langgraph@1.4.14(@langchain/core@1.2.13)(zod@4.4.3))(supports-color@7.2.0)':
     dependencies:
-      '@langchain/core': 1.2.9
-      '@langchain/langgraph': 1.4.14(@langchain/core@1.2.9)(zod@4.4.3)
+      '@langchain/core': 1.2.13
+      '@langchain/langgraph': 1.4.14(@langchain/core@1.2.13)(zod@4.4.3)
       '@modelcontextprotocol/sdk': 1.30.0(@cfworker/json-schema@4.1.1)(supports-color@7.2.0)(zod@4.4.3)
       debug: 4.4.3(supports-color@7.2.0)
       zod: 4.4.3
@@ -3814,9 +3775,9 @@ snapshots:
 
   '@langchain/protocol@0.0.19': {}
 
-  '@langchain/textsplitters@1.0.1(@langchain/core@1.2.9)':
+  '@langchain/textsplitters@1.0.2(@langchain/core@1.2.13)':
     dependencies:
-      '@langchain/core': 1.2.9
+      '@langchain/core': 1.2.13
       js-tiktoken: 1.0.21
 
   '@manypkg/find-root@3.1.0':
@@ -3943,29 +3904,10 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 4.0.5
 
-  '@sap-ai-sdk/ai-api@2.12.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
-    dependencies:
-      '@sap-ai-sdk/core': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
   '@sap-ai-sdk/ai-api@2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
     dependencies:
       '@sap-ai-sdk/core': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
-  '@sap-ai-sdk/core@2.12.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
-    dependencies:
-      '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/http-client': 4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/openapi': 4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
     transitivePeerDependencies:
       - debug
@@ -3988,17 +3930,6 @@ snapshots:
       - debug
       - supports-color
 
-  '@sap-ai-sdk/foundation-models@2.12.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
-    dependencies:
-      '@sap-ai-sdk/ai-api': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-ai-sdk/core': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/http-client': 4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
   '@sap-ai-sdk/foundation-models@2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
     dependencies:
       '@sap-ai-sdk/ai-api': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
@@ -4010,22 +3941,9 @@ snapshots:
       - debug
       - supports-color
 
-  '@sap-ai-sdk/langchain@2.12.0(@langchain/core@1.2.9)(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
+  '@sap-ai-sdk/langchain@2.15.0(@langchain/core@1.2.13)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.14(@langchain/core@1.2.13))(supports-color@7.2.0)':
     dependencies:
-      '@langchain/core': 1.2.9
-      '@sap-ai-sdk/ai-api': 2.12.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-ai-sdk/core': 2.12.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-ai-sdk/foundation-models': 2.12.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-ai-sdk/orchestration': 2.12.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/connectivity': 4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/util': 4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
-  '@sap-ai-sdk/langchain@2.15.0(@langchain/core@1.2.9)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.10(@langchain/core@1.2.9))(supports-color@7.2.0)':
-    dependencies:
-      '@langchain/core': 1.2.9
+      '@langchain/core': 1.2.13
       '@sap-ai-sdk/ai-api': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap-ai-sdk/core': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap-ai-sdk/foundation-models': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
@@ -4033,18 +3951,7 @@ snapshots:
       '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
     optionalDependencies:
-      langchain: 1.5.10(@langchain/core@1.2.9)
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
-  '@sap-ai-sdk/orchestration@2.12.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
-    dependencies:
-      '@sap-ai-sdk/ai-api': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-ai-sdk/core': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-ai-sdk/prompt-registry': 2.12.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      yaml: 2.9.0
+      langchain: 1.5.14(@langchain/core@1.2.13)
     transitivePeerDependencies:
       - debug
       - supports-color
@@ -4060,33 +3967,10 @@ snapshots:
       - debug
       - supports-color
 
-  '@sap-ai-sdk/prompt-registry@2.12.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
-    dependencies:
-      '@sap-ai-sdk/core': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      zod: 4.4.3
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
   '@sap-ai-sdk/prompt-registry@2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
     dependencies:
       '@sap-ai-sdk/core': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       zod: 4.4.3
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
-  '@sap-cloud-sdk/connectivity@4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
-    dependencies:
-      '@sap-cloud-sdk/resilience': 4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap/xsenv': 6.2.1(supports-color@7.2.0)
-      '@sap/xssec': 4.13.1(supports-color@7.2.0)
-      async-retry: 1.3.3
-      axios: 1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      jks-js: 1.1.7
-      jsonwebtoken: 9.0.3
-      safe-stable-stringify: 2.5.0
     transitivePeerDependencies:
       - debug
       - supports-color
@@ -4106,31 +3990,10 @@ snapshots:
       - debug
       - supports-color
 
-  '@sap-cloud-sdk/http-client@4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
-    dependencies:
-      '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/resilience': 4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      axios: 1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
   '@sap-cloud-sdk/http-client@4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
     dependencies:
       '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap-cloud-sdk/resilience': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      axios: 1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
-  '@sap-cloud-sdk/openapi@4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
-    dependencies:
-      '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/http-client': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap-cloud-sdk/resilience': 4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       axios: 1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
     transitivePeerDependencies:
@@ -4148,33 +4011,12 @@ snapshots:
       - debug
       - supports-color
 
-  '@sap-cloud-sdk/resilience@4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
-    dependencies:
-      '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      async-retry: 1.3.3
-      axios: 1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      opossum: 9.0.0
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
   '@sap-cloud-sdk/resilience@4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
     dependencies:
       '@sap-cloud-sdk/util': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       async-retry: 1.3.3
       axios: 1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       opossum: 10.0.0
-    transitivePeerDependencies:
-      - debug
-      - supports-color
-
-  '@sap-cloud-sdk/util@4.7.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)':
-    dependencies:
-      axios: 1.18.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      logform: 2.7.0
-      voca: 1.4.1
-      winston: 3.19.0
-      winston-transport: 4.9.0
     transitivePeerDependencies:
       - debug
       - supports-color
@@ -4780,14 +4622,14 @@ snapshots:
 
   deep-is@0.1.4: {}
 
-  deepagents@1.13.3(@langchain/core@1.2.9)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.9))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.9))(@langchain/langgraph@1.4.14(@langchain/core@1.2.9)(zod@4.4.3))(langchain@1.5.10(@langchain/core@1.2.9))(langsmith@0.8.0):
+  deepagents@1.13.3(@langchain/core@1.2.13)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@langchain/langgraph@1.4.14(@langchain/core@1.2.13)(zod@4.4.3))(langchain@1.5.14(@langchain/core@1.2.13))(langsmith@0.8.0):
     dependencies:
-      '@langchain/core': 1.2.9
-      '@langchain/langgraph': 1.4.14(@langchain/core@1.2.9)(zod@4.4.3)
-      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.9)
-      '@langchain/langgraph-sdk': 1.10.2(@langchain/core@1.2.9)
+      '@langchain/core': 1.2.13
+      '@langchain/langgraph': 1.4.14(@langchain/core@1.2.13)(zod@4.4.3)
+      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.13)
+      '@langchain/langgraph-sdk': 1.10.2(@langchain/core@1.2.13)
       fast-glob: 3.3.3
-      langchain: 1.5.10(@langchain/core@1.2.9)
+      langchain: 1.5.14(@langchain/core@1.2.13)
       langsmith: 0.8.0
       micromatch: 4.0.8
       yaml: 2.9.0
@@ -5299,11 +5141,11 @@ snapshots:
 
   kuler@2.0.0: {}
 
-  langchain@1.5.10(@langchain/core@1.2.9):
+  langchain@1.5.14(@langchain/core@1.2.13):
     dependencies:
-      '@langchain/core': 1.2.9
-      '@langchain/langgraph': 1.4.14(@langchain/core@1.2.9)(zod@4.4.3)
-      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.9)
+      '@langchain/core': 1.2.13
+      '@langchain/langgraph': 1.4.14(@langchain/core@1.2.13)(zod@4.4.3)
+      '@langchain/langgraph-checkpoint': 1.1.5(@langchain/core@1.2.13)
       langsmith: 0.8.0
       zod: 4.4.3
     transitivePeerDependencies:
@@ -5537,8 +5379,6 @@ snapshots:
       mimic-fn: 2.1.0
 
   opossum@10.0.0: {}
-
-  opossum@9.0.0: {}
 
   optionator@0.9.4:
     dependencies:
