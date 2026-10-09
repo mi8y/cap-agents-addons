@@ -46,8 +46,8 @@
     "clean": "shx rm -rf node_modules dist @cds-models tmp .turbo"
   },
   "devDependencies": {
-    "@cap-js/cds-typer": "^0.41.0",
-    "@cap-js/cds-types": "^0.19.0",
+    "@cap-js/cds-typer": "^0.41.1",
+    "@cap-js/cds-types": "^0.20.0",
     "@eslint/js": "^10.0.1",
     "@sap/cds": ">=10",
     "@tsconfig/recommended": "^1.0.13",

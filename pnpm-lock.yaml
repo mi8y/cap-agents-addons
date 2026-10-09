@@ -197,8 +197,8 @@ importers:
   examples/cap-agents-aicore-vectorstore:
     dependencies:
       '@cap-js/agents':
-        specifier: ^0.9.3
-        version: 0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
+        specifier: ^0.9.7
+        version: 0.9.7(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
       '@langchain/core':
         specifier: ^1.2.13
         version: 1.2.13
@@ -213,7 +213,7 @@ importers:
         version: 2.15.0(@langchain/core@1.2.13)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.14(@langchain/core@1.2.13))(supports-color@7.2.0)
       '@sap/cds':
         specifier: ^10
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+        version: 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       langchain:
         specifier: ^1.5.14
         version: 1.5.14(@langchain/core@1.2.13)
@@ -223,13 +223,13 @@ importers:
     devDependencies:
       '@cap-js/sqlite':
         specifier: ^3
-        version: 3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        version: 3.1.1(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
 
   examples/cap-agents-cds-vectorstore:
     dependencies:
       '@cap-js/agents':
-        specifier: ^0.9.3
-        version: 0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
+        specifier: ^0.9.7
+        version: 0.9.7(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
       '@langchain/core':
         specifier: ^1.2.13
         version: 1.2.13
@@ -244,7 +244,7 @@ importers:
         version: 2.15.0(@langchain/core@1.2.13)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.14(@langchain/core@1.2.13))(supports-color@7.2.0)
       '@sap/cds':
         specifier: ^10
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+        version: 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       langchain:
         specifier: ^1.5.14
         version: 1.5.14(@langchain/core@1.2.13)
@@ -254,19 +254,19 @@ importers:
     devDependencies:
       '@cap-js/sqlite':
         specifier: ^3
-        version: 3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        version: 3.1.1(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
 
   examples/cap-agents-memory:
     dependencies:
       '@cap-js/agents':
-        specifier: ^0.9.3
-        version: 0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
+        specifier: ^0.9.7
+        version: 0.9.7(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)
       '@mi8y/cap-agents-memory':
         specifier: workspace:*
         version: link:../../packages/cap-agents-memory
       '@sap/cds':
         specifier: ^10
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+        version: 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       langchain:
         specifier: ^1.5.14
         version: 1.5.14(@langchain/core@1.2.13)
@@ -276,7 +276,7 @@ importers:
     devDependencies:
       '@cap-js/sqlite':
         specifier: ^3
-        version: 3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        version: 3.1.1(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
 
   examples/langchain-cds-persistence:
     dependencies:
@@ -291,7 +291,7 @@ importers:
         version: 2.15.0(@langchain/core@1.2.13)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.14(@langchain/core@1.2.13))(supports-color@7.2.0)
       '@sap/cds':
         specifier: ^10
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+        version: 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       langchain:
         specifier: ^1.5.14
         version: 1.5.14(@langchain/core@1.2.13)
@@ -300,8 +300,8 @@ importers:
         version: 4.4.3
     devDependencies:
       '@cap-js/sqlite':
-        specifier: ^3.1.0
-        version: 3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        specifier: ^3.1.1
+        version: 3.1.1(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
 
   packages/cap-agents-aicore-vectorstore:
     dependencies:
@@ -317,7 +317,7 @@ importers:
         version: 1.2.13
       '@sap/cds':
         specifier: '>=10'
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+        version: 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -341,14 +341,14 @@ importers:
         version: link:../cap-agents-utils
     devDependencies:
       '@cap-js/cds-typer':
-        specifier: ^0.41.0
-        version: 0.41.0(@cap-js/cds-types@0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        specifier: ^0.41.1
+        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
       '@cap-js/cds-types':
-        specifier: ^0.19.0
-        version: 0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
+        specifier: ^0.20.0
+        version: 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
       '@cap-js/sqlite':
-        specifier: ^3.1.0
-        version: 3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        specifier: ^3.1.1
+        version: 3.1.1(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
@@ -357,10 +357,10 @@ importers:
         version: 1.2.13
       '@sap/cds':
         specifier: '>=10'
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+        version: 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       '@sap/eslint-plugin-cds':
         specifier: ^4.2.5
-        version: 4.2.5(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(eslint@10.10.0(supports-color@7.2.0))
+        version: 4.2.5(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(eslint@10.10.0(supports-color@7.2.0))
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -387,14 +387,14 @@ importers:
         version: link:../cap-agents-utils
     devDependencies:
       '@cap-js/cds-typer':
-        specifier: ^0.41.0
-        version: 0.41.0(@cap-js/cds-types@0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        specifier: ^0.41.1
+        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
       '@cap-js/cds-types':
-        specifier: ^0.19.0
-        version: 0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
+        specifier: ^0.20.0
+        version: 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
       '@cap-js/sqlite':
-        specifier: ^3.1.0
-        version: 3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        specifier: ^3.1.1
+        version: 3.1.1(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
@@ -403,10 +403,10 @@ importers:
         version: 1.2.13
       '@sap/cds':
         specifier: '>=10'
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+        version: 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       '@sap/eslint-plugin-cds':
         specifier: ^4.2.5
-        version: 4.2.5(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(eslint@10.10.0(supports-color@7.2.0))
+        version: 4.2.5(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(eslint@10.10.0(supports-color@7.2.0))
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -433,14 +433,14 @@ importers:
         version: 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap/cds':
         specifier: '>=10'
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+        version: 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       picomatch:
         specifier: ^4.0.7
         version: 4.0.7
     devDependencies:
       '@cap-js/cds-types':
         specifier: ^0.20.0
-        version: 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
+        version: 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
@@ -469,17 +469,17 @@ importers:
   packages/cap-agents-utils:
     devDependencies:
       '@cap-js/cds-typer':
-        specifier: ^0.41.0
-        version: 0.41.0(@cap-js/cds-types@0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        specifier: ^0.41.1
+        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
       '@cap-js/cds-types':
-        specifier: ^0.19.0
-        version: 0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
+        specifier: ^0.20.0
+        version: 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
       '@sap/cds':
         specifier: '>=10'
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+        version: 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -503,14 +503,14 @@ importers:
         version: 1.1.5(@langchain/core@1.2.13)
     devDependencies:
       '@cap-js/cds-typer':
-        specifier: ^0.41.0
-        version: 0.41.0(@cap-js/cds-types@0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        specifier: ^0.41.1
+        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
       '@cap-js/cds-types':
-        specifier: ^0.19.0
-        version: 0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
+        specifier: ^0.20.0
+        version: 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
       '@cap-js/sqlite':
-        specifier: ^3.1.0
-        version: 3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+        specifier: ^3.1.1
+        version: 3.1.1(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(supports-color@7.2.0))
@@ -525,10 +525,10 @@ importers:
         version: link:../cap-agents-utils
       '@sap/cds':
         specifier: '>=10'
-        version: 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+        version: 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       '@sap/eslint-plugin-cds':
         specifier: ^4.2.5
-        version: 4.2.5(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(eslint@10.10.0(supports-color@7.2.0))
+        version: 4.2.5(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(eslint@10.10.0(supports-color@7.2.0))
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -555,8 +555,8 @@ importers:
         version: link:../cds-langgraph-persistence
     devDependencies:
       '@cap-js/cds-types':
-        specifier: ^0.19.0
-        version: 0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
+        specifier: ^0.20.0
+        version: 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
       '@langchain/langgraph-checkpoint':
         specifier: ^1.1.5
         version: 1.1.5(@langchain/core@1.2.13)
@@ -624,8 +624,8 @@ packages:
   '@cacheable/utils@2.5.0':
     resolution: {integrity: sha512-buipgOVDkkPXNR5+xBpDw7Zk2n1EvU7qBJCNUcL7rhQ//kfpOXPAvQ511Os0vpLYJ1pZnvudNytkQt2hst3wqA==}
 
-  '@cap-js/agents@0.9.3':
-    resolution: {integrity: sha512-lQUGuq2oMRAEdg0YZu2DA8QH4Y5ZQTT/AEBqJ274c8El6dNOud8eck+elainupE9wHh0Kn+0oNnptijE34rxfA==}
+  '@cap-js/agents@0.9.7':
+    resolution: {integrity: sha512-L1FwYCpoF81P71tbhseBOfxYeuyBU8rqUYdPeZhkQ0UImFzeDlrVb/xJKIlwYyvfc5zX4HXBCrTvtFw5a9P2sQ==}
     engines: {node: '>=22.0.0'}
     peerDependencies:
       '@cap-js/audit-logging': '>=1'
@@ -658,24 +658,13 @@ packages:
       '@google-cloud/storage':
         optional: true
 
-  '@cap-js/cds-typer@0.41.0':
-    resolution: {integrity: sha512-Jo3Dw4zgOSUf5dytt03HtlqQ9zUn4iPtQWUck+DUmscJPSI1q+nk7GxVpWlbzoSn/kVxmZl0B9Dmf9FarjveGg==}
+  '@cap-js/cds-typer@0.41.1':
+    resolution: {integrity: sha512-j59mfoNkOpe4lknBfOXHJV5PwwJyIJxoZlpBe75KIxHVPLUs8bpFetgfCmUs9eNDxZ25JQjlJOfxQ1O3Fsancg==}
     engines: {node: '>=22'}
     hasBin: true
     peerDependencies:
       '@cap-js/cds-types': '>=0.9'
       '@sap/cds': '>=8'
-
-  '@cap-js/cds-types@0.19.0':
-    resolution: {integrity: sha512-bMKdx+aesAYP9QR5Dsjp13OdXMFJtyV47tkbTTGAdUioPF05KA+6BCC+V3ECN3OxDqIKWd3RozxO1+oZe1F8ew==}
-    peerDependencies:
-      '@sap/cds': '>=9.0.0'
-      '@sap/cds-dk': '>=9'
-      '@sap/xssec': '>=3'
-      '@types/express': '>=4'
-    peerDependenciesMeta:
-      '@sap/cds-dk':
-        optional: true
 
   '@cap-js/cds-types@0.20.0':
     resolution: {integrity: sha512-3AFQVJ0GM5EKQAeltNMPPq9MW6R56m9Tbk9YwQxstNjbvRGZBoFv42Hs69utjrzpyzhnG7aTniXm6U7Xx43WTw==}
@@ -688,8 +677,8 @@ packages:
       '@sap/cds-dk':
         optional: true
 
-  '@cap-js/db-service@3.1.0':
-    resolution: {integrity: sha512-CabYQlrT8O2n8aWnvjBhk94KlkpwowUzqnxwJFtokEBiHIVemu1+Kfvoo1djwpX6MB/4TV2j3xQf0DnLiLMUeA==}
+  '@cap-js/db-service@3.1.1':
+    resolution: {integrity: sha512-N1vgMkiDR0IrwwCGFr1e4CcSUsoHFsxiryMC9EYpUPR7mQnw6kfvWzYEwB3/9QXp1nmauV2RoETN6WFqBdwXZg==}
     peerDependencies:
       '@sap/cds': ^10
       generic-pool: ^3.9.0
@@ -697,14 +686,14 @@ packages:
       generic-pool:
         optional: true
 
-  '@cap-js/mcp@1.4.3':
-    resolution: {integrity: sha512-e2Jh6Woh8LLWeuK21TvB8mzZ+7cFi63WQ/tWjzBEIlqFS8qeb5yc63XnlL2ZKpn/PVaLyo9C5ZMaSGa2p6oNLQ==}
+  '@cap-js/mcp@1.5.0':
+    resolution: {integrity: sha512-tliK6DAMsqcg97QOAAi8gP99Iw/rGnhxh1doAT3V1YKGlQA8s5DiBi6eHqpkPYeHeDhXU7QbecGXqmMegOOeDA==}
     peerDependencies:
       '@sap/cds': '>=8'
       express: '>=4'
 
-  '@cap-js/sqlite@3.1.0':
-    resolution: {integrity: sha512-wcTMQqaGlIq+WkuvQ/p7+I9xoCUGxzYF8TFnrtl78MClBukTrRBWc29xvwznFlifJUVdF3NVhcIabep5+ancHA==}
+  '@cap-js/sqlite@3.1.1':
+    resolution: {integrity: sha512-FHkenWLi7p8VMNg9Sa1CVqa7HZhAiY0RQkANfjP+torubFDd4fiTH98bLyLZ3Xo+vjhJYsE5Ztta8rmnUBzwPA==}
     peerDependencies:
       '@sap/cds': ^10
       better-sqlite3: ^12.0.0 || ^13.0.0
@@ -1284,8 +1273,8 @@ packages:
     peerDependencies:
       '@sap/cds': '>=8'
 
-  '@sap/cds@10.0.3':
-    resolution: {integrity: sha512-S9q8vcJXzIsO4KC49sb9JLIhY/k0MJTZcgEOzmhvoBW/lWLLR79Oci0xmyQqSxJwwzjavR9mW8I4wbMJQQMVAA==}
+  '@sap/cds@10.1.1':
+    resolution: {integrity: sha512-0F2R0BqQS6q463WlDlkSqPaV8WK/YXDCKgVmAWcvYSRwcbJUFDBK1X4RF5obHFWjqOO1rXsf9Jh105inHXU3/g==}
     engines: {node: '>=22'}
     hasBin: true
     peerDependencies:
@@ -3389,11 +3378,11 @@ snapshots:
       hashery: 1.5.1
       keyv: 5.6.0
 
-  '@cap-js/agents@0.9.3(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)':
+  '@cap-js/agents@0.9.7(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(debug@4.4.3(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)(langsmith@0.8.0)(supports-color@7.2.0)':
     dependencies:
       '@a2a-js/sdk': 0.3.14(express@5.2.1(supports-color@7.2.0))
-      '@cap-js/attachments': 4.0.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
-      '@cap-js/mcp': 1.4.3(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)
+      '@cap-js/attachments': 4.0.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+      '@cap-js/mcp': 1.5.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)
       '@langchain/anthropic': 1.5.9(@langchain/core@1.2.13)
       '@langchain/core': 1.2.13
       '@langchain/langgraph': 1.4.14(@langchain/core@1.2.13)(zod@4.4.3)
@@ -3401,7 +3390,8 @@ snapshots:
       '@sap-ai-sdk/langchain': 2.15.0(@langchain/core@1.2.13)(debug@4.4.3(supports-color@7.2.0))(langchain@1.5.14(@langchain/core@1.2.13))(supports-color@7.2.0)
       '@sap-ai-sdk/orchestration': 2.15.0(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
       '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
-      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      '@sap-cloud-sdk/http-client': 4.9.1(debug@4.4.3(supports-color@7.2.0))(supports-color@7.2.0)
+      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       deepagents: 1.13.3(@langchain/core@1.2.13)(@langchain/langgraph-checkpoint@1.1.5(@langchain/core@1.2.13))(@langchain/langgraph-sdk@1.10.2(@langchain/core@1.2.13))(@langchain/langgraph@1.4.14(@langchain/core@1.2.13)(zod@4.4.3))(langchain@1.5.14(@langchain/core@1.2.13))(langsmith@0.8.0)
       langchain: 1.5.14(@langchain/core@1.2.13)
       marked: 18.0.12
@@ -3429,50 +3419,42 @@ snapshots:
       - supports-color
       - ws
 
-  '@cap-js/attachments@4.0.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
+  '@cap-js/attachments@4.0.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
     dependencies:
-      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
 
-  '@cap-js/cds-typer@0.41.0(@cap-js/cds-types@0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6))(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
+  '@cap-js/cds-typer@0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
     dependencies:
-      '@cap-js/cds-types': 0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
-      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      '@cap-js/cds-types': 0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)
+      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
 
-  '@cap-js/cds-types@0.19.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)':
+  '@cap-js/cds-types@0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)':
     dependencies:
-      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       '@sap/xssec': 4.13.1(supports-color@7.2.0)
       '@types/express': 5.0.6
     optionalDependencies:
       '@sap/cds-dk': 10.0.5
 
-  '@cap-js/cds-types@0.20.0(@sap/cds-dk@10.0.5)(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(@sap/xssec@4.13.1(supports-color@7.2.0))(@types/express@5.0.6)':
+  '@cap-js/db-service@3.1.1(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
     dependencies:
-      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
-      '@sap/xssec': 4.13.1(supports-color@7.2.0)
-      '@types/express': 5.0.6
-    optionalDependencies:
-      '@sap/cds-dk': 10.0.5
+      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
 
-  '@cap-js/db-service@3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
-    dependencies:
-      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
-
-  '@cap-js/mcp@1.4.3(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)':
+  '@cap-js/mcp@1.5.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(express@5.2.1(supports-color@7.2.0))(hono@4.13.7)':
     dependencies:
       '@modelcontextprotocol/node': 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.7)
       '@modelcontextprotocol/server': 2.0.0
-      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       '@toon-format/toon': 4.1.1
       express: 5.2.1(supports-color@7.2.0)
       zod: 4.4.3
     transitivePeerDependencies:
       - hono
 
-  '@cap-js/sqlite@3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
+  '@cap-js/sqlite@3.1.1(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
     dependencies:
-      '@cap-js/db-service': 3.1.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
-      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      '@cap-js/db-service': 3.1.1(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
     transitivePeerDependencies:
       - generic-pool
 
@@ -4037,24 +4019,24 @@ snapshots:
   '@sap/cds-dk@10.0.5':
     optional: true
 
-  '@sap/cds-fiori@2.3.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
+  '@sap/cds-fiori@2.3.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))':
     dependencies:
-      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
 
-  '@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)':
+  '@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.10.0(supports-color@7.2.0))
       '@sap/cds-compiler': 7.0.1
-      '@sap/cds-fiori': 2.3.0(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
+      '@sap/cds-fiori': 2.3.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))
       express: 5.2.1(supports-color@7.2.0)
       yaml: 2.9.0
     transitivePeerDependencies:
       - supports-color
 
-  '@sap/eslint-plugin-cds@4.2.5(@sap/cds@10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(eslint@10.10.0(supports-color@7.2.0))':
+  '@sap/eslint-plugin-cds@4.2.5(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0))(eslint@10.10.0(supports-color@7.2.0))':
     dependencies:
       '@eslint/plugin-kit': 0.7.2
-      '@sap/cds': 10.0.3(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
+      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.10.0(supports-color@7.2.0)))(supports-color@7.2.0)
       eslint: 10.10.0(supports-color@7.2.0)
       semver: 7.8.5
     optionalDependencies:

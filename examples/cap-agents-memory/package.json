@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "@cap-js/agents": "^0.9.3",
+    "@cap-js/agents": "^0.9.7",
     "@mi8y/cap-agents-memory": "workspace:*",
     "@sap/cds": "^10",
     "langchain": "^1.5.14",
