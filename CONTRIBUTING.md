@@ -6,6 +6,18 @@
 pnpm install
 ```
 
+Workspace dependencies are injected so each application resolves a plugin's
+peers, including `@sap/cds`, in its own dependency context. Manage application
+dependencies in that application's `package.json`; shared CDS peers do not need
+to be added to the workspace root. `dedupeInjectedDeps: false` keeps installed
+copies from being replaced with source symlinks when peer sets happen to match.
+
+Run `pnpm build` after changing a plugin. PNPM synchronizes injected copies after
+each package's `build` script. Run `pnpm install` to refresh copies after changing
+other packaged files, such as CDS models or plugin configuration. When checking
+CDS resolution, compare the application with its installed plugin copy rather
+than the plugin's source directory, which has its own development dependencies.
+
 ## Scripts
 
 | Script               | Description                      |

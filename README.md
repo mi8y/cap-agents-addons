@@ -76,6 +76,8 @@ npm install @mi8y/cap-agents-sdm-backend
 
 Configure a Cloud SDK destination for the SDM API or bind an SDM service in Cloud Foundry. No `cds add` step or repository provisioning is provided.
 
+- **Example**: [Local SDM reports agent with reuse UI](./examples/cap-agents-sdm-backend/README.md)
+
 - **More Info**: [CAP Agents SDM Backend README](./packages/cap-agents-sdm-backend/README.md)
 
 ### 5. LangGraph checkpoint persistence

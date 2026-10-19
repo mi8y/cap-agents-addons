@@ -9,3 +9,5 @@ coverage
 tmp
 .turbo
 .pnpm-store
+.cdsrc-private.json
+gen

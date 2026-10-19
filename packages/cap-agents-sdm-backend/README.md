@@ -67,6 +67,10 @@ The backend implements `ls`, `read`, `readRaw`, `write`, `edit`, `glob`, and lit
 
 `SapCloudSdkCmisClient` is exported for direct Browser Binding operations, including listing, reading, creating, updating, checking out/in, querying, and explicit deletion. It accepts the CMIS transport options above (`repositoryId`, `destination`, `browserBindingPath`, and `requestExecutor`). Unlike `SdmBackend`, its path arguments are **repository paths**, not virtual paths. Only use delete operations on paths you own. The client does not validate or provision repositories.
 
+## Example
+
+See the [local SDM reports agent](../../examples/cap-agents-sdm-backend/README.md) for a CAP `buildGraph` override mounting SDM at `/reports/`, an SAPUI5 document reuse UI, and a shared local credential file for CAP and the approuter.
+
 ## CAP notes
 
 - The host is responsible for authenticated request context and tenant isolation. Do not share user-specific destinations across tenants or put credentials in logs.

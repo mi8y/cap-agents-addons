@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "4.0"
+metadata:
+  name: examples.cap.agents.sdmbackend
+type: application
+server:
+  customMiddleware: []
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**

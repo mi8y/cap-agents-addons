@@ -1,0 +1,16 @@
+<mvc:View controllerName="examples.cap.agents.sdmbackend.controller.App"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <App id="app">
+        <Page id="page" title="CAP Agents - SAP DMS Backend">
+            <headerContent>
+                <Link text="Open agent chat" href="/a2a/reports-agent/preview/" target="_blank"/>
+            </headerContent>
+            <content>
+                <core:ComponentContainer id="documentTable" usage="documentTable" height="100%" manifest="true"/>
+            </content>
+        </Page>
+    </App>
+</mvc:View>

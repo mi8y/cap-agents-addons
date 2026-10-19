@@ -1,0 +1,89 @@
+{
+  "_version": "1.89.0",
+  "sap.app": {
+    "id": "examples.cap.agents.sdmbackend",
+    "type": "application",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "CAP Agents - SAP DMS Backend",
+    "description": "SAP DMS Embedded UI",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.33.0",
+      "toolsId": "bcc63bcd-c704-414d-b929-bc19bfb69762"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/reports-agent/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.153.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      }
+    },
+    "resources": {},
+    "rootView": {
+      "viewName": "examples.cap.agents.sdmbackend.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    },
+    "componentUsages": {
+      "documentTable": {
+        "name": "com.sap.ecm.reuse.documentTable",
+        "settings": {
+          "destinationPath": "/comsapecmreuse.comsapecmreusedocumentTable/api",
+          "repositoryId": "MI8Y_DOCS",
+          "objectId": "43dd1d70001c540234bf5da6"
+        }
+      }
+    },
+    "resourceRoots": {
+      "com.sap.ecm.reuse.documentTable": "./../comsapecmreuse.comsapecmreusedocumentTable/"
+    }
+  }
+}
