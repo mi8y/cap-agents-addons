@@ -6,7 +6,8 @@
   "dependencies": {
     "@cap-js/agents": "^0.9.8",
     "@mi8y/cap-agents-sdm-backend": "workspace:*",
-    "@sap/cds": "^10"
+    "@sap/cds": "^10",
+    "deepagents": "^1.10.0"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^3",

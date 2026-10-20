@@ -8,14 +8,15 @@
 
 - First do an initial deployment
 
-````sh
+```sh
 cds up
+```
 
 - Then CDS bind to services
 
 ```sh
 cds bind -2 ca-sdm-auth,ca-sdm-destination,ca-sdm-html5-rt,ca-sdm-sdm
-````
+```
 
 - Start CAP server
 
