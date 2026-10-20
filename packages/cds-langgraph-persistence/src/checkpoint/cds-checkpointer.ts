@@ -11,12 +11,14 @@ import {
   CheckpointMetadata,
   CheckpointPendingWrite,
   CheckpointTuple,
+  compareWritesSortKeys,
   copyCheckpoint,
   maxChannelVersion,
   PendingWrite,
   SerializerProtocol,
   TASKS,
   WRITES_IDX_MAP,
+  writesSortKey,
 } from "@langchain/langgraph-checkpoint";
 import { readParentsWithChildren } from "@mi8y/cap-agents-utils";
 import cds from "@sap/cds";
@@ -136,13 +138,19 @@ export class CdsCheckpointSaver extends BaseCheckpointSaver {
     writes: TCheckpointWrite[],
   ): Promise<CheckpointPendingWrite[]> {
     return Promise.all(
-      writes.map(async (w: TCheckpointWrite) => {
-        return [
-          w.taskId,
-          w.channel,
-          await this.serde.loadsTyped(w.type ?? "json", w.value ?? ""),
-        ] as CheckpointPendingWrite;
-      }),
+      writes
+        .map((write) => ({
+          write,
+          key: writesSortKey(write.taskPath ?? "", write.taskId, write.idx),
+        }))
+        .sort((a, b) => compareWritesSortKeys(a.key, b.key))
+        .map(async ({ write: w }) => {
+          return [
+            w.taskId,
+            w.channel,
+            await this.serde.loadsTyped(w.type ?? "json", w.value ?? ""),
+          ] as CheckpointPendingWrite;
+        }),
     );
   }
 
@@ -524,6 +532,7 @@ export class CdsCheckpointSaver extends BaseCheckpointSaver {
     config: RunnableConfig,
     writes: PendingWrite[],
     taskId: string,
+    taskPath = "",
   ): Promise<void> {
     if (!config.configurable) {
       throw new Error(`Empty "config.configurable" supplied`);
@@ -554,6 +563,7 @@ export class CdsCheckpointSaver extends BaseCheckpointSaver {
           checkpoint_namespace: checkpointNamespace,
           checkpoint_threadId: threadId,
           taskId: taskId,
+          taskPath,
           // Special channels are stored at fixed negative indices so they
           // never collide with regular per-step writes (whose `idx` is the
           // ordinal within `writes`).

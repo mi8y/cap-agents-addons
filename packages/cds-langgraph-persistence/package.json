@@ -45,7 +45,7 @@
     "short-term-memory"
   ],
   "dependencies": {
-    "@langchain/langgraph-checkpoint": "^1.1.5"
+    "@langchain/langgraph-checkpoint": "^1.2.0"
   },
   "devDependencies": {
     "@mi8y/cap-agents-utils": "workspace:*",
@@ -54,7 +54,7 @@
     "@cap-js/sqlite": "^3.1.1",
     "@eslint/js": "^10.0.1",
     "@langchain/core": "^1.2.13",
-    "@langchain/langgraph-checkpoint-validation": "^1.1.1",
+    "@langchain/langgraph-checkpoint-validation": "^1.2.0",
     "@sap/cds": ">=10",
     "@sap/eslint-plugin-cds": "^4.2.5",
     "@tsconfig/recommended": "^1.0.13",

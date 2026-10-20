@@ -26,6 +26,7 @@ aspect CheckpointWrite {
     key checkpoint_threadId  : String(256) not null;
     key taskId               : String(256) not null;
     key idx                  : Integer not null;
+        taskPath             : LargeString;
         channel              : String(256) not null;
         type                 : String(64);
         value                : LargeString;

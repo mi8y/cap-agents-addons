@@ -537,7 +537,7 @@ importers:
   packages/cds-langgraph-persistence:
     dependencies:
       '@langchain/langgraph-checkpoint':
-        specifier: ^1.1.5
+        specifier: ^1.2.0
         version: 1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
     devDependencies:
       '@cap-js/cds-typer':
@@ -556,7 +556,7 @@ importers:
         specifier: ^1.2.13
         version: 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
       '@langchain/langgraph-checkpoint-validation':
-        specifier: ^1.1.1
+        specifier: ^1.2.0
         version: 1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@types/node@26.6.5)(@vitest/coverage-v8@5.0.5)(vite@8.3.4(@types/node@26.6.5)(terser@5.51.2)(yaml@2.9.1))
       '@mi8y/cap-agents-utils':
         specifier: workspace:*
