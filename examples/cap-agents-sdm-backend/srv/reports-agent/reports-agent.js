@@ -5,64 +5,59 @@ import {
   CompositeBackend,
   createMemoryMiddleware,
   createSkillsMiddleware,
-  FilesystemBackend,
 } from "deepagents";
 import { SdmBackend } from "@mi8y/cap-agents-sdm-backend";
-
-const LOG = cds.log("reports-agent");
-const { fs, path } = cds.utils;
 
 export default class ReportsAgent extends cds.ApplicationService {
   init() {
     this.on("buildGraph", async () => {
-      const agentDir = path.dirname(
-        path.join(cds.root, this.definition?.$location?.file),
-      );
-      LOG.info(`Agent initialising from directory: ${agentDir}`);
-
       const tools = await this.send("buildTools");
       const model = await this.send("buildModel", { deepAgent: true, tools });
       const middleware = await this.send("buildMiddleware", { model, tools });
       const systemPrompt = await this.send("buildSystemPrompt");
 
-      const additionalBackends = {};
-      const agentDirMiddleware = [];
+      const repositoryId = cds.env.requires.sdm.settings.repositoryId;
 
-      const agentFsBackend = new FilesystemBackend({
-        rootDir: agentDir,
-        virtualMode: true,
+      // Initialize SDM backends for instructions, skills, and reports
+      const instructionBackend = new SdmBackend({
+        repositoryId,
+        virtualRootPath: "/",
       });
-      if (fs.existsSync(path.join(agentDir, "AGENTS.md"))) {
-        agentDirMiddleware.push(
-          createMemoryMiddleware({
-            backend: agentFsBackend,
-            sources: ["./AGENTS.md"],
-          }),
-        );
-      }
+      const skillsBackend = new SdmBackend({
+        repositoryId,
+        virtualRootPath: "/skills",
+      });
+      const reportBackend = new SdmBackend({
+        repositoryId,
+        virtualRootPath: "/report",
+      });
 
-      if (fs.existsSync(path.join(agentDir, "skills"))) {
-        additionalBackends["./skills/"] = additionalBackends["/skills/"] =
-          new FilesystemBackend({
-            rootDir: path.join(agentDir, "skills"),
-            virtualMode: true,
-          });
-        agentDirMiddleware.push(
-          createSkillsMiddleware({
-            backend: agentFsBackend,
-            sources: ["./skills"],
-          }),
-        );
-      }
+      // mount each backend under appropriate paths
+      const additionalBackends = {};
+      additionalBackends["/report/"] = additionalBackends["./report/"] =
+        reportBackend;
+      additionalBackends["/skills/"] = additionalBackends["./skills/"] =
+        skillsBackend;
 
-      additionalBackends["./reports/"] = additionalBackends["/reports/"] =
-        new SdmBackend({ repositoryId: "MI8Y_DOCS", virtualRootPath: "/" });
+      // deepagents need middleware for AGENTS.md and Agent-Skills with correct backends
+      const additionalMiddlewares = [
+        // to load `AGENTS.md` file from SDM backend
+        createMemoryMiddleware({
+          backend: instructionBackend,
+          sources: ["/AGENTS.md"],
+        }),
+        // to load agent-skills from SDM backend
+        createSkillsMiddleware({
+          backend: skillsBackend,
+          sources: ["/skills/"],
+        }),
+      ];
 
       return createDeepAgent({
         model,
         tools,
-        systemPrompt: systemPrompt,
-        middleware: [...middleware, ...agentDirMiddleware],
+        systemPrompt,
+        middleware: [...middleware, ...additionalMiddlewares],
         backend: new CompositeBackend(new StateBackend(), additionalBackends),
       });
     });

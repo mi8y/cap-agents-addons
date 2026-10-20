@@ -1,0 +1,37 @@
+Project Status Report
+
+Project: {{project}}
+Reporting Period: {{start_date}} to {{end_date}}
+Project Manager / Owner: {{owner}}
+Overall RAG Status: {{Green / Amber / Red / To confirm}}
+RAG Rationale: {{rationale}}
+
+Executive Summary
+{{Current position and key changes since the preceding reporting period.}}
+
+Milestone Status
+- Milestone: {{milestone}}
+  Target Date: {{date}}
+  Status / Change: {{status}}
+
+Accomplishments This Period
+- {{Outcome supported by current-period evidence.}}
+
+Risks and Issues
+- Risk / Issue: {{risk or issue}}
+  Impact: {{impact}}
+  Mitigation / Next Step: {{response}}
+  Owner: {{owner}}
+
+Next-Period Actions
+- Action: {{action}}
+  Owner: {{owner}}
+  Due Date: {{date}}
+  Status: {{status}}
+
+Decisions Required
+- {{Decision, decision maker, and required date.}}
+
+Sources and Gaps
+Sources: {{Plain source paths or URLs, user notes, and preceding report path if available.}}
+Gaps: {{Missing information or items awaiting confirmation.}}

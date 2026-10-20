@@ -287,6 +287,9 @@ importers:
       '@mi8y/cap-agents-sdm-backend':
         specifier: workspace:*
         version: file:packages/cap-agents-sdm-backend(a2e1c953a4c89fd5a4d01a6eb507dd9a)
+      '@sap-cloud-sdk/connectivity':
+        specifier: ^4.9.1
+        version: 4.9.1(debug@4.4.3)
       '@sap/cds':
         specifier: ^10
         version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
