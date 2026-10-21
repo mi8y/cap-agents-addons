@@ -1,5 +1,7 @@
 # Reports Assistant with SAP Document Management
 
+<video src="docs/images/demo-cap-agent-sdm-backend.mp4" width="100%" controls autoplay loop muted></video>
+
 A CAP agent that turns notes into business reports in a shared SAP Document
 Management workspace. Built with `@cap-js/agents`, Deep Agents, and
 [`@mi8y/cap-agents-sdm-backend`](../../packages/cap-agents-sdm-backend/README.md).

@@ -80,6 +80,8 @@ Configure a Cloud SDK destination for the SDM API or bind an SDM service in Clou
 
 - **More Info**: [CAP Agents SDM Backend README](./packages/cap-agents-sdm-backend/README.md)
 
+<video src="docs/images/demo-cap-agent-sdm-backend.mp4" width="100%" controls autoplay loop muted></video>
+
 ### 5. LangGraph checkpoint persistence
 
 > [!WARNING]
