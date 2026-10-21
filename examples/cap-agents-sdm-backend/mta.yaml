@@ -1,0 +1,86 @@
+_schema-version: 3.3.0
+ID: examples.ca-sdm
+version: 1.0.0
+description: CAP-level Agents - SAP Document Management based Backend
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm ci
+        - npx cds build --production
+
+modules:
+  - name: ca-sdm-srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      instances: 1
+      buildpack: nodejs_buildpack
+      disk-quota: 256M
+      memory: 512M
+    build-parameters:
+      builder: npm-ci
+    provides:
+      - name: srv-api # required by consumers of CAP services (e.g. approuter)
+        properties:
+          srv-url: ${default-url}
+    requires:
+      - name: ca-sdm-auth
+      - name: ca-sdm-sdm
+      - name: ca-sdm-destination
+
+  - name: ca-sdm-app
+    type: approuter.nodejs
+    path: .deploy/app-router
+    parameters:
+      keep-existing-routes: true
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: ca-sdm-auth
+      - name: ca-sdm-destination
+      - name: ca-sdm-html5-rt
+      - name: ca-sdm-sdm
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api # must be used in xs-app.json as well
+          url: ~{srv-url}
+          forwardAuthToken: true
+    provides:
+      - name: app-api
+        properties:
+          app-protocol: ${protocol}
+          app-uri: ${default-uri}
+
+resources:
+  - name: ca-sdm-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      requires:
+        - name: app-api
+      config:
+        xsappname: ca-sdm-${org}-${space}
+
+  - name: ca-sdm-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+
+  - name: ca-sdm-html5-rt
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-runtime
+
+  - name: ca-sdm-sdm
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: sdm
+      service-plan: build-runtime # use `standard` for standard runtime

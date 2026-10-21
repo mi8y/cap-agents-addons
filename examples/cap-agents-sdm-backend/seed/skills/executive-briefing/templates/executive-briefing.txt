@@ -1,0 +1,27 @@
+Executive Briefing
+
+Subject: {{subject}}
+Date: {{briefing_date}}
+Prepared For: {{audience}}
+Prepared By: {{author}}
+
+Executive Summary
+{{Main message, business implication, and purpose of this briefing.}}
+
+Key Findings
+- {{Evidence-backed finding and its implication.}}
+
+Recommendation
+{{Recommended course of action and rationale; alternatives/tradeoffs if relevant.}}
+
+Decision Required
+{{Decision, decision maker, and required date; or informational purpose.}}
+
+Next Steps
+- Action: {{action}}
+  Owner: {{owner}}
+  Due Date: {{date}}
+
+Sources and Gaps
+Sources: {{Plain source paths or URLs and user notes.}}
+Gaps: {{Missing evidence, conflicting information, or items to confirm.}}

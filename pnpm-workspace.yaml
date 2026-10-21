@@ -3,6 +3,13 @@ allowBuilds:
   tree-sitter: true
   tree-sitter-java: false
 
+injectWorkspacePackages: true
+dedupeInjectedDeps: false
+syncInjectedDepsAfterScripts:
+  - build
+
 packages:
   - "examples/*"
+  - "examples/*/.deploy/*"
+  - "examples/*/app/*"
   - "packages/*"

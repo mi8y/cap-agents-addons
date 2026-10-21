@@ -1,0 +1,43 @@
+{
+  "name": "@examples/cap-agents-sdm-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@cap-js/agents": "^0.9.8",
+    "@mi8y/cap-agents-sdm-backend": "workspace:*",
+    "@sap/cds": "^10",
+    "deepagents": "^1.10.0",
+    "@sap-cloud-sdk/connectivity": "^4.9.1"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3",
+    "cds-plugin-ui5": "^0.17.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "dev": "cds watch",
+    "setup:sdm": "cds bind --exec -- node scripts/setup-sdm.js"
+  },
+  "cds": {
+    "requires": {
+      "destinations": true,
+      "llm": {
+        "kind": "aicore",
+        "model": "anthropic--claude-4.6-sonnet",
+        "destinationName": "EXT_SAP_AICORE_EU10"
+      },
+      "[hybrid]": {
+        "auth": "xsuaa"
+      },
+      "[production]": {
+        "auth": "xsuaa"
+      },
+      "sdm": {
+        "settings": {
+          "repositoryId": "MI8Y_DOCS"
+        }
+      }
+    }
+  }
+}

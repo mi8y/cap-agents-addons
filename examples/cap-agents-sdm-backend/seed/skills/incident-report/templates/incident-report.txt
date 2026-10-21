@@ -1,0 +1,30 @@
+Incident Report
+
+Incident Reference: {{reference}}
+Incident Date / Time / Timezone: {{date_time_timezone}}
+Severity: {{severity or To confirm}}
+Status: {{reported incident status}}
+Incident Owner: {{owner}}
+
+Summary and Business Impact
+{{What happened, affected services/users, and evidenced business impact.}}
+
+Timeline
+- Date / Time / Timezone: {{timestamp}}
+  Event / Response: {{event}}
+
+Resolution
+{{Containment, recovery, permanent resolution, and any remaining work.}}
+
+Root Cause / Investigation Status
+{{Confirmed cause and supporting evidence, or suspected cause and open investigation.}}
+
+Corrective Actions
+- Action: {{action}}
+  Owner: {{owner}}
+  Due Date: {{date}}
+  Status: {{status}}
+
+Sources and Gaps
+Sources: {{Plain source paths or URLs and user-provided incident notes.}}
+Gaps: {{Missing evidence or items awaiting confirmation.}}

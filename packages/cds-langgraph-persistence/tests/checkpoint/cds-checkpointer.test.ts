@@ -8,6 +8,7 @@ import {
   validate,
 } from "@langchain/langgraph-checkpoint-validation";
 import cds from "@sap/cds";
+import { emptyCheckpoint } from "@langchain/langgraph-checkpoint";
 import { fileURLToPath } from "url";
 
 export const cdsCheckpointSaverTestInitializer: CheckpointSaverTestInitializer<CdsCheckpointSaver> =
@@ -55,3 +56,40 @@ export const cdsCheckpointSaverTestInitializer: CheckpointSaverTestInitializer<C
   };
 
 validate(cdsCheckpointSaverTestInitializer);
+
+describe("pending writes from older schemas", () => {
+  beforeAll(() => cdsCheckpointSaverTestInitializer.beforeAll?.());
+  afterAll(() => cdsCheckpointSaverTestInitializer.afterAll?.());
+  afterEach(async () => {
+    await DELETE.from(DEFAULT_FQN_ENTITY_CHECKPOINT_WRITES);
+    await DELETE.from(DEFAULT_FQN_ENTITY_CHECKPOINTS);
+  });
+
+  it.each(["getTuple", "list"] as const)(
+    "%s sorts null task paths as empty paths",
+    async (method) => {
+      const saver = new CdsCheckpointSaver({ name: "legacy-writes" });
+      const config = await saver.put(
+        { configurable: { thread_id: "legacy-thread" } },
+        emptyCheckpoint(),
+        { source: "loop", step: 0, parents: {} },
+        {},
+      );
+      await saver.putWrites(config, [["ch", "task"]], "a", "~pull, 01");
+      await saver.putWrites(config, [["ch", "legacy"]], "z");
+      // An additive schema migration leaves existing taskPath values null.
+      await UPDATE(DEFAULT_FQN_ENTITY_CHECKPOINT_WRITES)
+        .set({ taskPath: null })
+        .where({ taskId: "z" });
+
+      const tuple =
+        method === "getTuple"
+          ? await saver.getTuple(config)
+          : (await saver.list(config).next()).value;
+      expect(tuple?.pendingWrites?.map((write) => write[2])).toEqual([
+        "legacy",
+        "task",
+      ]);
+    },
+  );
+});
