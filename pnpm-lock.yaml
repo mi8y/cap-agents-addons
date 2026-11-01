@@ -198,8 +198,8 @@ importers:
   examples/cap-agents-aicore-vectorstore:
     dependencies:
       '@cap-js/agents':
-        specifier: ^0.9.7
-        version: 0.9.8(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)(express@5.3.0)(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(undici@6.29.1)(ws@8.21.3)
+        specifier: ^0.9.10
+        version: 0.9.10(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)(express@5.3.0)(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(undici@6.29.1)(ws@8.21.3)
       '@langchain/core':
         specifier: ^1.2.13
         version: 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
@@ -208,13 +208,13 @@ importers:
         version: 1.0.2(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       '@mi8y/cap-agents-aicore-vectorstore':
         specifier: workspace:*
-        version: file:packages/cap-agents-aicore-vectorstore(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)
+        version: file:packages/cap-agents-aicore-vectorstore(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)
       '@sap-ai-sdk/langchain':
         specifier: ^2.15.0
         version: 2.16.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(debug@4.4.3)(langchain@1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       '@sap/cds':
         specifier: ^10
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       langchain:
         specifier: ^1.5.14
         version: 1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
@@ -224,13 +224,13 @@ importers:
     devDependencies:
       '@cap-js/sqlite':
         specifier: ^3
-        version: 3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
 
   examples/cap-agents-cds-vectorstore:
     dependencies:
       '@cap-js/agents':
-        specifier: ^0.9.7
-        version: 0.9.8(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)(express@5.3.0)(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(undici@6.29.1)(ws@8.21.3)
+        specifier: ^0.9.10
+        version: 0.9.10(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)(express@5.3.0)(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(undici@6.29.1)(ws@8.21.3)
       '@langchain/core':
         specifier: ^1.2.13
         version: 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
@@ -239,13 +239,13 @@ importers:
         version: 1.0.2(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       '@mi8y/cap-agents-cds-vectorstore':
         specifier: workspace:*
-        version: file:packages/cap-agents-cds-vectorstore(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: file:packages/cap-agents-cds-vectorstore(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@sap-ai-sdk/langchain':
         specifier: ^2.15.0
         version: 2.16.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(debug@4.4.3)(langchain@1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       '@sap/cds':
         specifier: ^10
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       langchain:
         specifier: ^1.5.14
         version: 1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
@@ -255,19 +255,19 @@ importers:
     devDependencies:
       '@cap-js/sqlite':
         specifier: ^3
-        version: 3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
 
   examples/cap-agents-memory:
     dependencies:
       '@cap-js/agents':
-        specifier: ^0.9.7
-        version: 0.9.8(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)(express@5.3.0)(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(undici@6.29.1)(ws@8.21.3)
+        specifier: ^0.9.10
+        version: 0.9.10(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)(express@5.3.0)(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(undici@6.29.1)(ws@8.21.3)
       '@mi8y/cap-agents-memory':
         specifier: workspace:*
-        version: file:packages/cap-agents-memory(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: file:packages/cap-agents-memory(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@sap/cds':
         specifier: ^10
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       langchain:
         specifier: ^1.5.14
         version: 1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
@@ -277,38 +277,38 @@ importers:
     devDependencies:
       '@cap-js/sqlite':
         specifier: ^3
-        version: 3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
 
   examples/cap-agents-sdm-backend:
     dependencies:
       '@cap-js/agents':
-        specifier: ^0.9.8
-        version: 0.9.8(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)(express@5.3.0)(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(undici@6.29.1)(ws@8.21.3)
+        specifier: ^0.9.10
+        version: 0.9.10(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)(express@5.3.0)(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(undici@6.29.1)(ws@8.21.3)
       '@mi8y/cap-agents-sdm-backend':
         specifier: workspace:*
-        version: file:packages/cap-agents-sdm-backend(a2e1c953a4c89fd5a4d01a6eb507dd9a)
+        version: file:packages/cap-agents-sdm-backend(e9424ccb2a44ec20bc8b48be203aba45)
       '@sap-cloud-sdk/connectivity':
         specifier: ^4.9.1
         version: 4.9.1(debug@4.4.3)
       '@sap/cds':
         specifier: ^10
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       deepagents:
         specifier: ^1.10.0
         version: 1.15.1(@langchain/anthropic@1.5.12(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph@1.5.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(zod@4.6.7))(@langchain/openai@1.6.2(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(undici@6.29.1)(ws@8.21.3))(langchain@1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
     devDependencies:
       '@cap-js/sqlite':
         specifier: ^3
-        version: 3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       cds-plugin-ui5:
         specifier: ^0.17.0
-        version: 0.17.4(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@ui5/builder@4.3.3)(express@5.3.0)
+        version: 0.17.4(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@ui5/builder@4.3.3)(express@5.3.0)
 
   examples/cap-agents-sdm-backend/.deploy/app-router:
     dependencies:
       '@sap/approuter':
-        specifier: ^23.0.0
-        version: 23.3.0(undici@6.29.1)
+        specifier: ^23.4.0
+        version: 23.4.0(undici@6.29.1)
 
   examples/cap-agents-sdm-backend/app/reports:
     devDependencies:
@@ -323,13 +323,13 @@ importers:
         version: 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
       '@mi8y/cds-langgraph-persistence':
         specifier: workspace:*
-        version: file:packages/cds-langgraph-persistence(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: file:packages/cds-langgraph-persistence(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@sap-ai-sdk/langchain':
         specifier: ^2.12.0
         version: 2.16.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(debug@4.4.3)(langchain@1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       '@sap/cds':
         specifier: ^10
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       langchain:
         specifier: ^1.5.14
         version: 1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
@@ -339,7 +339,7 @@ importers:
     devDependencies:
       '@cap-js/sqlite':
         specifier: ^3.1.1
-        version: 3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
 
   packages/cap-agents-aicore-vectorstore:
     dependencies:
@@ -355,7 +355,7 @@ importers:
         version: 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
       '@sap/cds':
         specifier: '>=10'
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -376,17 +376,17 @@ importers:
     dependencies:
       '@mi8y/cap-agents-utils':
         specifier: workspace:*
-        version: file:packages/cap-agents-utils(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: file:packages/cap-agents-utils(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
     devDependencies:
       '@cap-js/cds-typer':
         specifier: ^0.41.1
-        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@cap-js/cds-types':
         specifier: ^0.20.0
-        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
+        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
       '@cap-js/sqlite':
         specifier: ^3.1.1
-        version: 3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.13.0)
@@ -395,10 +395,10 @@ importers:
         version: 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
       '@sap/cds':
         specifier: '>=10'
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       '@sap/eslint-plugin-cds':
         specifier: ^4.2.5
-        version: 4.2.5(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(eslint@10.13.0)
+        version: 4.2.5(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(eslint@10.13.0)
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -422,17 +422,17 @@ importers:
         version: 1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       '@mi8y/cap-agents-utils':
         specifier: workspace:*
-        version: file:packages/cap-agents-utils(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: file:packages/cap-agents-utils(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
     devDependencies:
       '@cap-js/cds-typer':
         specifier: ^0.41.1
-        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@cap-js/cds-types':
         specifier: ^0.20.0
-        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
+        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
       '@cap-js/sqlite':
         specifier: ^3.1.1
-        version: 3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.13.0)
@@ -441,10 +441,10 @@ importers:
         version: 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
       '@sap/cds':
         specifier: '>=10'
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       '@sap/eslint-plugin-cds':
         specifier: ^4.2.5
-        version: 4.2.5(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(eslint@10.13.0)
+        version: 4.2.5(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(eslint@10.13.0)
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -471,14 +471,14 @@ importers:
         version: 4.9.1(debug@4.4.3)
       '@sap/cds':
         specifier: '>=10'
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       picomatch:
         specifier: ^4.0.7
         version: 4.0.7
     devDependencies:
       '@cap-js/cds-types':
         specifier: ^0.20.0
-        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
+        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.13.0)
@@ -508,16 +508,16 @@ importers:
     devDependencies:
       '@cap-js/cds-typer':
         specifier: ^0.41.1
-        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@cap-js/cds-types':
         specifier: ^0.20.0
-        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
+        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.13.0)
       '@sap/cds':
         specifier: '>=10'
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -542,13 +542,13 @@ importers:
     devDependencies:
       '@cap-js/cds-typer':
         specifier: ^0.41.1
-        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@cap-js/cds-types':
         specifier: ^0.20.0
-        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
+        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
       '@cap-js/sqlite':
         specifier: ^3.1.1
-        version: 3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: 3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.13.0)
@@ -560,13 +560,13 @@ importers:
         version: 1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@types/node@26.6.5)(@vitest/coverage-v8@5.0.5)(vite@8.3.4(@types/node@26.6.5)(terser@5.51.2)(yaml@2.9.1))
       '@mi8y/cap-agents-utils':
         specifier: workspace:*
-        version: file:packages/cap-agents-utils(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: file:packages/cap-agents-utils(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@sap/cds':
         specifier: '>=10'
-        version: 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+        version: 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       '@sap/eslint-plugin-cds':
         specifier: ^4.2.5
-        version: 4.2.5(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(eslint@10.13.0)
+        version: 4.2.5(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(eslint@10.13.0)
       '@tsconfig/recommended':
         specifier: ^1.0.13
         version: 1.0.13
@@ -587,14 +587,14 @@ importers:
     dependencies:
       '@mi8y/cap-agents-memory':
         specifier: workspace:*
-        version: file:packages/cap-agents-memory(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: file:packages/cap-agents-memory(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       '@mi8y/cds-langgraph-persistence':
         specifier: workspace:*
-        version: file:packages/cds-langgraph-persistence(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+        version: file:packages/cds-langgraph-persistence(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
     devDependencies:
       '@cap-js/cds-types':
         specifier: ^0.20.0
-        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
+        version: 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
       '@langchain/langgraph-checkpoint':
         specifier: ^1.1.5
         version: 1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
@@ -669,8 +669,8 @@ packages:
   '@cacheable/utils@2.5.0':
     resolution: {integrity: sha512-buipgOVDkkPXNR5+xBpDw7Zk2n1EvU7qBJCNUcL7rhQ//kfpOXPAvQ511Os0vpLYJ1pZnvudNytkQt2hst3wqA==}
 
-  '@cap-js/agents@0.9.8':
-    resolution: {integrity: sha512-wRE0OZ89gI4Imul8FEPtnu9AiZ4c51MQ1UDkd1pAMTBmEYoSmMVXC/wLSR1Ou5f4j1g6iZ0Zj6FvPQ28l/F6+A==}
+  '@cap-js/agents@0.9.10':
+    resolution: {integrity: sha512-TbI5qEZFsfjOIOgcpMA1K5aqQRcU3Qcim51czDvmPxd47zEeAcbzQt5DHLmq74NbaUDGhTG+ZTjX6cwr7phr5Q==}
     engines: {node: '>=22.0.0'}
     peerDependencies:
       '@cap-js/audit-logging': '>=1'
@@ -877,12 +877,6 @@ packages:
     peerDependencies:
       hono: ^4
 
-  '@hono/node-server@2.1.5':
-    resolution: {integrity: sha512-MgP/I06GdvsilDspMk/qmRzpk8LOUStP6jFAbSRi40W09DhoyUn+Mj7eyKICPqeYKybOjVFLVIAQzvu1bfIa7Q==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      hono: ^4 || ^5.0.0-0
-
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
     engines: {node: '>=18.18.0'}
@@ -989,12 +983,12 @@ packages:
       '@langchain/core': ^1.1.48
       zod: ^3.25.32 || ^4.2.0
 
-  '@langchain/mcp-adapters@1.1.4':
-    resolution: {integrity: sha512-6E8ULWoI9w+lxydeb8yHILyEluonZ4JS42OwSLL1k/RvG/trjGuLYm7P9gE+/pFOxLuNk9wHZ7BLfGju4tcJEQ==}
+  '@langchain/mcp-adapters@2.0.1':
+    resolution: {integrity: sha512-dYijIiyN5JdufWX1I8cGrhKnmtSzl50cKLPuH9196xpsEJBz9TO+Z/ZM9pcHNyKM7+OZJDJvwB+DS7cAVhyheA==}
     engines: {node: '>=20.10.0'}
     peerDependencies:
-      '@langchain/core': ^1.0.0
-      '@langchain/langgraph': ^1.4.10
+      '@langchain/core': ^1.2.6
+      '@langchain/langgraph': ^1.4.18
 
   '@langchain/openai@1.6.2':
     resolution: {integrity: sha512-KaXc3zjdM2/E24FdBlsk5NTT2Dyxh46vzCS2by78ehN6G5zdx+4OfVnPvyLl8r2tv2TqQCHpEhImVXgnAZaOvg==}
@@ -1057,8 +1051,16 @@ packages:
     peerDependencies:
       '@sap/cds': '>=10'
 
+  '@modelcontextprotocol/client@2.4.0':
+    resolution: {integrity: sha512-LgrD2OphHuG12vfKFKz6SOnq7bKHQmhGJIAYdD+MZBn2npHEyry6uD8zvktodtl5CQM85MO0anUyD9JwmUmxww==}
+    engines: {node: '>=20'}
+
   '@modelcontextprotocol/core@2.3.1':
     resolution: {integrity: sha512-laVmIhPGpWi7rG9q+0UigblRN0Hws/Yjlb6qLFtVqryXVLkc4h+yN8z731POD2LnAGQlFe7/tXhUm7Bi0YB91g==}
+    engines: {node: '>=20'}
+
+  '@modelcontextprotocol/core@2.4.0':
+    resolution: {integrity: sha512-z8QBKqdfXLPzkLQuG4xp8hrVEMm1PZ1IgxMN2sMbJiFiAKOWXnAzogXn2W4aqIBlP1ea6U5yiqVquvUNM1Cj6Q==}
     engines: {node: '>=20'}
 
   '@modelcontextprotocol/node@2.1.1':
@@ -1066,16 +1068,6 @@ packages:
     engines: {node: '>=20'}
     peerDependencies:
       '@modelcontextprotocol/server': ^2.3.0
-
-  '@modelcontextprotocol/sdk@1.32.1':
-    resolution: {integrity: sha512-2DdE+SJDtzLEEWzY1ZjY7Q+VcPhcV1KisD3zI4u0XZyktsjHum1mwbMI+JaulUBi2OZk+KJAi2uPXzxichPkdw==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      '@cfworker/json-schema': ^4.1.1
-      zod: ^3.25 || ^4.0
-    peerDependenciesMeta:
-      '@cfworker/json-schema':
-        optional: true
 
   '@modelcontextprotocol/server@2.3.1':
     resolution: {integrity: sha512-e59MfWuSssj6DoQ96JCTqdW1AXT5/XtnTl0WWd6MU1Ka434fFUGGosCLJbGNySDhHGvxQWoRWK137FXYFkYNWw==}
@@ -1315,8 +1307,8 @@ packages:
   '@sap-cloud-sdk/util@4.9.1':
     resolution: {integrity: sha512-1tuv+c6o2Y8/1F3UEdqiv3TPWzZDpCjxuDpAFtFBM8C+weum8ixgwc2YXEWvBzWvtSEl7C5L/o8jBqiuhcXF4w==}
 
-  '@sap/approuter@23.3.0':
-    resolution: {integrity: sha512-q+ypAKKkXLSPzoXDwN+gyRow7ePb0VCEaWdsco/a4oadQemsQs5xQRnUOHvzDwi7OZBeIr4G/9GwPEhegcQXtg==}
+  '@sap/approuter@23.4.0':
+    resolution: {integrity: sha512-Ut24+XnN0Q7ItHI5isyatsEKdlK5c+1yndv0wKuvBf9PT6ftn4jmAPUhT+L+evx4O17pqEWFamvYq06nOMHxsg==}
     engines: {node: ^22.0.0 || ^24.0.0}
 
   '@sap/audit-logging@7.0.0':
@@ -1445,9 +1437,9 @@ packages:
     peerDependencies:
       '@sap/cds': '>=8'
 
-  '@sap/cds@10.1.1':
-    resolution: {integrity: sha512-0F2R0BqQS6q463WlDlkSqPaV8WK/YXDCKgVmAWcvYSRwcbJUFDBK1X4RF5obHFWjqOO1rXsf9Jh105inHXU3/g==}
-    engines: {node: '>=22'}
+  '@sap/cds@10.2.2':
+    resolution: {integrity: sha512-HO5Uk4wZedf7lEdMQyd9Cxa7Wny8NLDUp/WDwr5rKU6Byi2vu0kbAoLM8oREIVhj11DwQn9j+lSaBJNTCTAoEQ==}
+    engines: {node: '>=22.12'}
     hasBin: true
     peerDependencies:
       '@eslint/js': ^9 || ^10
@@ -1844,14 +1836,6 @@ packages:
     resolution: {integrity: sha512-kja8j7PjmncONqaTsB8fQ+wE2mSU2DJ9D4XKoJ5PFWIdRMa6SLSN1ff4mOr4jCbfRSsxR4keIiySJU0N9T5hIQ==}
     engines: {node: '>= 8.0.0'}
 
-  ajv-formats@3.0.1:
-    resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
-    peerDependencies:
-      ajv: ^8.0.0
-    peerDependenciesMeta:
-      ajv:
-        optional: true
-
   ajv@6.15.0:
     resolution: {integrity: sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw==}
 
@@ -1951,6 +1935,10 @@ packages:
 
   body-parser@2.3.0:
     resolution: {integrity: sha512-2cGmJupaNgg+QUwVLAucDuWuoMZ6EX9iHDRswZ5lsNYEmwPaRknMPCLZz07yTzVq/83p4o/wzbDZbBrTvGGTIw==}
+    engines: {node: '>=18'}
+
+  body-parser@2.4.0:
+    resolution: {integrity: sha512-Ifk1KcLrxaGt1occQagQNFNNOqRt1LFuehEnHHzB8Z6cRgIxRU1TBaiIsUiCdA+gy5PL7Y1IX31DNKkRmxtXjQ==}
     engines: {node: '>=18'}
 
   boolbase@1.0.0:
@@ -2242,10 +2230,6 @@ packages:
       '@langchain/openai':
         optional: true
 
-  deepmerge@2.2.1:
-    resolution: {integrity: sha512-R9hc1Xa/NOBi9WRVUWg19rl1UB7Tt4kuPd+thNJgFZoxXsTz7ncaPaeIm+40oSGuP33DfMb4sZt1QIGiJzC4EA==}
-    engines: {node: '>=0.10.0'}
-
   default-browser-id@5.0.1:
     resolution: {integrity: sha512-x1VCxdX4t+8wVfd1so/9w+vQ4vx7lKd2Qp5tDRutErwmR85OgmfX7RlLRMWafRMY7hbEiXIbudNrjOAPa/hL8Q==}
     engines: {node: '>=18'}
@@ -2505,12 +2489,6 @@ packages:
   exponential-backoff@3.1.3:
     resolution: {integrity: sha512-ZgEeZXj30q+I0EN+CbSSpIyPaJ5HVQD18Z1m+u1FXbAeT94mr1zw50q4q6jiiC447Nl/YTcIYSAftiGqetwXCA==}
 
-  express-rate-limit@8.7.1:
-    resolution: {integrity: sha512-2FXbqkygil3mZiXzEtM0IjE/UBmBNot0J1GEVrJT4JbrvwOSoEtqtO+wHbiMQELWe1eNvHoYRg2dkjOid+6JkA==}
-    engines: {node: '>= 16'}
-    peerDependencies:
-      express: '>= 4.11'
-
   express-session@1.19.0:
     resolution: {integrity: sha512-0csaMkGq+vaiZTmSMMGkfdCOabYv192VbytFypcvI0MANrp+4i/7yEkJ0sbAEhycQjntaKGzYfjfXQyVb7BHMA==}
     engines: {node: '>= 0.8.0'}
@@ -2525,9 +2503,6 @@ packages:
 
   exsolve@1.1.3:
     resolution: {integrity: sha512-kuzL9zherLQoqDeQaS55AiiIg1kb4KYXaSusTtgZTPlvKP2gGCI82LNmBNh5RjDVUXIcmgx+/Mx7vPwRzBbhJA==}
-
-  extended-eventsource@1.7.0:
-    resolution: {integrity: sha512-s8rtvZuYcKBpzytHb5g95cHbZ1J99WeMnV18oKc5wKoxkHzlzpPc/bNAm7Da2Db0BDw0CAu1z3LpH+7UsyzIpw==}
 
   extsprintf@1.4.1:
     resolution: {integrity: sha512-Wrk35e8ydCKDj/ArClo1VrPVmN8zph5V4AtHwIuHhvMXsKf73UT3BOD+azBIW+3wOJ4FhEH7zyaJCFvChjYvMA==}
@@ -3028,9 +3003,6 @@ packages:
 
   json-schema-traverse@1.0.0:
     resolution: {integrity: sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==}
-
-  json-schema-typed@8.0.2:
-    resolution: {integrity: sha512-fQhoXdcvc3V28x7C7BMs4P5+kNlgUURe2jmUT1T//oBRMDrqy1QPelJimwZGo7Hg9VPV3EQV5Bnq4hbFy2vetA==}
 
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
@@ -4764,11 +4736,6 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zod-to-json-schema@3.25.2:
-    resolution: {integrity: sha512-O/PgfnpT1xKSDeQYSCfRI5Gy3hPf91mKVDuYLUHZJMiDFptvP41MSnWofm8dnCm0256ZNfZIM7DSzuSMAFnjHA==}
-    peerDependencies:
-      zod: ^3.25.28 || ^4
-
   zod@4.6.7:
     resolution: {integrity: sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==}
 
@@ -4824,21 +4791,21 @@ snapshots:
       hashery: 1.5.1
       keyv: 5.6.0
 
-  '@cap-js/agents@0.9.8(@cfworker/json-schema@4.1.1)(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)(express@5.3.0)(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(undici@6.29.1)(ws@8.21.3)':
+  '@cap-js/agents@0.9.10(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)(express@5.3.0)(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(undici@6.29.1)(ws@8.21.3)':
     dependencies:
       '@a2a-js/sdk': 0.3.14(express@5.3.0)
-      '@cap-js/attachments': 4.0.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
-      '@cap-js/mcp': 1.5.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(express@5.3.0)
+      '@cap-js/attachments': 4.0.0(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+      '@cap-js/mcp': 1.5.0(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(express@5.3.0)
       '@langchain/anthropic': 1.5.12(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       '@langchain/core': 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
       '@langchain/langgraph': 1.5.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(zod@4.6.7)
-      '@langchain/mcp-adapters': 1.1.4(@cfworker/json-schema@4.1.1)(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@langchain/langgraph@1.5.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(zod@4.6.7))
+      '@langchain/mcp-adapters': 2.0.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@langchain/langgraph@1.5.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(zod@4.6.7))
       '@langchain/openai': 1.6.2(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(undici@6.29.1)(ws@8.21.3)
       '@sap-ai-sdk/langchain': 2.16.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(debug@4.4.3)(langchain@1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       '@sap-ai-sdk/orchestration': 2.16.0(debug@4.4.3)
       '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3)
       '@sap-cloud-sdk/http-client': 4.9.1(debug@4.4.3)
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       deepagents: 1.15.1(@langchain/anthropic@1.5.12(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph@1.5.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(zod@4.6.7))(@langchain/openai@1.6.2(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(undici@6.29.1)(ws@8.21.3))(langchain@1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       langchain: 1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
       marked: 18.1.1
@@ -4849,7 +4816,6 @@ snapshots:
       - '@aws-sdk/lib-storage'
       - '@azure/storage-blob'
       - '@bufbuild/protobuf'
-      - '@cfworker/json-schema'
       - '@google-cloud/storage'
       - '@grpc/grpc-js'
       - '@langchain/langgraph-checkpoint'
@@ -4869,40 +4835,40 @@ snapshots:
       - undici
       - ws
 
-  '@cap-js/attachments@4.0.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
+  '@cap-js/attachments@4.0.0(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
     dependencies:
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
 
-  '@cap-js/cds-typer@0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
+  '@cap-js/cds-typer@0.41.1(@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
     dependencies:
-      '@cap-js/cds-types': 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@cap-js/cds-types': 0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
 
-  '@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)':
+  '@cap-js/cds-types@0.20.0(@sap/cds-dk@10.1.0)(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@sap/xssec@4.15.0)(@types/express@5.0.6)':
     dependencies:
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       '@sap/xssec': 4.15.0
       '@types/express': 5.0.6
     optionalDependencies:
       '@sap/cds-dk': 10.1.0
 
-  '@cap-js/db-service@3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
+  '@cap-js/db-service@3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
     dependencies:
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
 
-  '@cap-js/mcp@1.5.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(express@5.3.0)':
+  '@cap-js/mcp@1.5.0(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(express@5.3.0)':
     dependencies:
       '@modelcontextprotocol/node': 2.1.1(@modelcontextprotocol/server@2.3.1)
       '@modelcontextprotocol/server': 2.3.1
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       '@toon-format/toon': 4.4.0
       express: 5.3.0
       zod: 4.6.7
 
-  '@cap-js/sqlite@3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
+  '@cap-js/sqlite@3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
     dependencies:
-      '@cap-js/db-service': 3.1.2(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@cap-js/db-service': 3.1.2(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
     transitivePeerDependencies:
       - generic-pool
 
@@ -5072,10 +5038,6 @@ snapshots:
     dependencies:
       hono: 4.13.13
 
-  '@hono/node-server@2.1.5(hono@4.13.13)':
-    dependencies:
-      hono: 4.13.13
-
   '@humanfs/core@0.19.2':
     dependencies:
       '@humanfs/types': 0.15.0
@@ -5211,18 +5173,13 @@ snapshots:
       - react
       - react-dom
 
-  '@langchain/mcp-adapters@1.1.4(@cfworker/json-schema@4.1.1)(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@langchain/langgraph@1.5.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(zod@4.6.7))':
+  '@langchain/mcp-adapters@2.0.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@langchain/langgraph@1.5.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(zod@4.6.7))':
     dependencies:
       '@langchain/core': 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
       '@langchain/langgraph': 1.5.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(zod@4.6.7)
-      '@modelcontextprotocol/sdk': 1.32.1(@cfworker/json-schema@4.1.1)(zod@4.6.7)
-      debug: 4.4.3
+      '@modelcontextprotocol/client': 2.4.0
+      '@modelcontextprotocol/core': 2.3.1
       zod: 4.6.7
-    optionalDependencies:
-      extended-eventsource: 1.7.0
-    transitivePeerDependencies:
-      - '@cfworker/json-schema'
-      - supports-color
 
   '@langchain/openai@1.6.2(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(undici@6.29.1)(ws@8.21.3)':
     dependencies:
@@ -5259,51 +5216,65 @@ snapshots:
       tinyglobby: 0.2.17
       yaml: 2.9.1
 
-  '@mi8y/cap-agents-aicore-vectorstore@file:packages/cap-agents-aicore-vectorstore(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)':
+  '@mi8y/cap-agents-aicore-vectorstore@file:packages/cap-agents-aicore-vectorstore(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(debug@4.4.3)':
     dependencies:
       '@langchain/core': 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
       '@sap-ai-sdk/document-grounding': 2.15.0(debug@4.4.3)
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
     transitivePeerDependencies:
       - debug
       - supports-color
 
-  '@mi8y/cap-agents-cds-vectorstore@file:packages/cap-agents-cds-vectorstore(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
+  '@mi8y/cap-agents-cds-vectorstore@file:packages/cap-agents-cds-vectorstore(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
     dependencies:
       '@langchain/core': 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
-      '@mi8y/cap-agents-utils': file:packages/cap-agents-utils(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@mi8y/cap-agents-utils': file:packages/cap-agents-utils(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
 
-  '@mi8y/cap-agents-memory@file:packages/cap-agents-memory(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
+  '@mi8y/cap-agents-memory@file:packages/cap-agents-memory(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
     dependencies:
       '@langchain/core': 1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)
       '@langchain/langgraph-checkpoint': 1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
-      '@mi8y/cap-agents-utils': file:packages/cap-agents-utils(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@mi8y/cap-agents-utils': file:packages/cap-agents-utils(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
 
-  '@mi8y/cap-agents-sdm-backend@file:packages/cap-agents-sdm-backend(a2e1c953a4c89fd5a4d01a6eb507dd9a)':
+  '@mi8y/cap-agents-sdm-backend@file:packages/cap-agents-sdm-backend(e9424ccb2a44ec20bc8b48be203aba45)':
     dependencies:
       '@sap-cloud-sdk/connectivity': 4.9.1(debug@4.4.3)
       '@sap-cloud-sdk/http-client': 4.9.1(debug@4.4.3)
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       deepagents: 1.15.1(@langchain/anthropic@1.5.12(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@langchain/langgraph-checkpoint@1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph-sdk@1.12.5(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3)))(@langchain/langgraph@1.5.1(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(zod@4.6.7))(@langchain/openai@1.6.2(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(undici@6.29.1)(ws@8.21.3))(langchain@1.5.18(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(langsmith@0.9.0(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       picomatch: 4.0.7
     transitivePeerDependencies:
       - debug
       - supports-color
 
-  '@mi8y/cap-agents-utils@file:packages/cap-agents-utils(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
+  '@mi8y/cap-agents-utils@file:packages/cap-agents-utils(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
     dependencies:
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
 
-  '@mi8y/cds-langgraph-persistence@file:packages/cds-langgraph-persistence(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
+  '@mi8y/cds-langgraph-persistence@file:packages/cds-langgraph-persistence(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
     dependencies:
       '@langchain/langgraph-checkpoint': 1.2.0(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
     transitivePeerDependencies:
       - '@langchain/core'
 
+  '@modelcontextprotocol/client@2.4.0':
+    dependencies:
+      '@modelcontextprotocol/core': 2.4.0
+      cross-spawn: 7.0.6
+      eventsource: 3.0.7
+      eventsource-parser: 3.1.1
+      jose: 6.2.12
+      pkce-challenge: 5.0.1
+      zod: 4.6.7
+
   '@modelcontextprotocol/core@2.3.1':
+    dependencies:
+      zod: 4.6.7
+
+  '@modelcontextprotocol/core@2.4.0':
     dependencies:
       zod: 4.6.7
 
@@ -5312,30 +5283,6 @@ snapshots:
       '@hono/node-server': 1.19.17(hono@4.13.13)
       '@modelcontextprotocol/server': 2.3.1
       hono: 4.13.13
-
-  '@modelcontextprotocol/sdk@1.32.1(@cfworker/json-schema@4.1.1)(zod@4.6.7)':
-    dependencies:
-      '@hono/node-server': 2.1.5(hono@4.13.13)
-      ajv: 8.20.0
-      ajv-formats: 3.0.1(ajv@8.20.0)
-      content-type: 1.0.5
-      cors: 2.8.6
-      cross-spawn: 7.0.6
-      eventsource: 3.0.7
-      eventsource-parser: 3.1.1
-      express: 5.3.0
-      express-rate-limit: 8.7.1(express@5.3.0)
-      hono: 4.13.13
-      jose: 6.2.12
-      json-schema-typed: 8.0.2
-      pkce-challenge: 5.0.1
-      raw-body: 3.0.2
-      zod: 4.6.7
-      zod-to-json-schema: 3.25.2(zod@4.6.7)
-    optionalDependencies:
-      '@cfworker/json-schema': 4.1.1
-    transitivePeerDependencies:
-      - supports-color
 
   '@modelcontextprotocol/server@2.3.1':
     dependencies:
@@ -5633,7 +5580,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@sap/approuter@23.3.0(undici@6.29.1)':
+  '@sap/approuter@23.4.0(undici@6.29.1)':
     dependencies:
       '@sap/audit-logging': 7.0.0
       '@sap/e2e-trace': 6.0.0
@@ -5646,7 +5593,7 @@ snapshots:
       axios-retry: 4.5.0(axios@1.20.0(debug@4.4.3))
       base64-url: 2.3.3
       basic-auth: 1.1.0
-      body-parser: 2.3.0
+      body-parser: 2.4.0
       cf-nodejs-logging-support: 8.0.0
       commander: 2.20.3
       compressible: 2.0.18
@@ -5656,7 +5603,6 @@ snapshots:
       cookie-parser: 1.4.7
       cookie-signature: 1.2.2
       debug: 4.4.3
-      deepmerge: 2.2.1
       encodeurl: 1.0.2
       express-session: 1.19.0
       http-proxy-agent: 7.0.2
@@ -5700,15 +5646,15 @@ snapshots:
   '@sap/cds-dk@10.1.0':
     optional: true
 
-  '@sap/cds-fiori@2.3.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
+  '@sap/cds-fiori@2.3.0(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))':
     dependencies:
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
 
-  '@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)':
+  '@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.13.0)
       '@sap/cds-compiler': 7.1.2
-      '@sap/cds-fiori': 2.3.0(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
+      '@sap/cds-fiori': 2.3.0(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))
       express: 5.3.0
       yaml: 2.9.1
     optionalDependencies:
@@ -5724,10 +5670,10 @@ snapshots:
     dependencies:
       request-stats: 3.0.0
 
-  '@sap/eslint-plugin-cds@4.2.5(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(eslint@10.13.0)':
+  '@sap/eslint-plugin-cds@4.2.5(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(eslint@10.13.0)':
     dependencies:
       '@eslint/plugin-kit': 0.7.3
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       eslint: 10.13.0
       semver: 7.8.5
     optionalDependencies:
@@ -6233,10 +6179,6 @@ snapshots:
     dependencies:
       humanize-ms: 1.2.1
 
-  ajv-formats@3.0.1(ajv@8.20.0):
-    optionalDependencies:
-      ajv: 8.20.0
-
   ajv@6.15.0:
     dependencies:
       fast-deep-equal: 3.1.3
@@ -6362,6 +6304,20 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  body-parser@2.4.0:
+    dependencies:
+      bytes: 3.1.2
+      content-type: 2.1.0
+      debug: 4.4.3
+      http-errors: 2.0.1
+      iconv-lite: 0.7.3
+      on-finished: 2.4.1
+      qs: 6.16.1
+      raw-body: 3.0.2
+      type-is: 2.1.0
+    transitivePeerDependencies:
+      - supports-color
+
   boolbase@1.0.0: {}
 
   boxen@8.0.1:
@@ -6438,9 +6394,9 @@ snapshots:
     dependencies:
       lodash: 4.18.1
 
-  cds-plugin-ui5@0.17.4(@sap/cds@10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@ui5/builder@4.3.3)(express@5.3.0):
+  cds-plugin-ui5@0.17.4(@sap/cds@10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22))(@ui5/builder@4.3.3)(express@5.3.0):
     dependencies:
-      '@sap/cds': 10.1.1(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
+      '@sap/cds': 10.2.2(@eslint/js@10.0.1(eslint@10.13.0))(tar@7.5.22)
       '@ui5/fs': 4.0.6
       '@ui5/project': 4.0.18(@ui5/builder@4.3.3)
       '@ui5/server': 4.0.17
@@ -6674,8 +6630,6 @@ snapshots:
     optionalDependencies:
       '@langchain/anthropic': 1.5.12(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))
       '@langchain/openai': 1.6.2(@langchain/core@1.2.18(openai@7.38.0(undici@6.29.1)(ws@8.21.3)(zod@4.6.7))(ws@8.21.3))(undici@6.29.1)(ws@8.21.3)
-
-  deepmerge@2.2.1: {}
 
   default-browser-id@5.0.1: {}
 
@@ -6931,14 +6885,6 @@ snapshots:
 
   exponential-backoff@3.1.3: {}
 
-  express-rate-limit@8.7.1(express@5.3.0):
-    dependencies:
-      debug: 4.4.3
-      express: 5.3.0
-      ip-address: 10.7.4
-    transitivePeerDependencies:
-      - supports-color
-
   express-session@1.19.0:
     dependencies:
       cookie: 0.7.2
@@ -7022,9 +6968,6 @@ snapshots:
       - supports-color
 
   exsolve@1.1.3: {}
-
-  extended-eventsource@1.7.0:
-    optional: true
 
   extsprintf@1.4.1: {}
 
@@ -7520,8 +7463,6 @@ snapshots:
   json-schema-traverse@0.4.1: {}
 
   json-schema-traverse@1.0.0: {}
-
-  json-schema-typed@8.0.2: {}
 
   json-stable-stringify-without-jsonify@1.0.1: {}
 
@@ -9156,9 +9097,5 @@ snapshots:
   yesno@0.4.0: {}
 
   yocto-queue@0.1.0: {}
-
-  zod-to-json-schema@3.25.2(zod@4.6.7):
-    dependencies:
-      zod: 4.6.7
 
   zod@4.6.7: {}
