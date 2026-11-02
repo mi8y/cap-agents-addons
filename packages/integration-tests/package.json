@@ -17,6 +17,6 @@
     "@cap-js/cds-types": "^0.20.0",
     "@langchain/langgraph-checkpoint": "^1.2.1",
     "@tsconfig/recommended": "^1.0.13",
-    "@types/node": "^26.1.1"
+    "@types/node": "^26.6.6"
   }
 }
