@@ -6,7 +6,7 @@
     "@cap-js/agents": "^0.9.10",
     "@mi8y/cap-agents-memory": "workspace:*",
     "@sap/cds": "^10",
-    "langchain": "^1.5.14",
+    "langchain": "^1.6.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
